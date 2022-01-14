@@ -1,0 +1,2 @@
+# Gozal
+wordpress theme
