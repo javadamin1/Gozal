@@ -1,3 +1,3 @@
-# Gozal
+# Gozal / Beautiful meaning in Turkish 
 wordpress theme free for all
-قالب وردپرس رایگان و راست چیت شده
+قالب وردپرس رایگان و راست چین شده
