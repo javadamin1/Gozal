@@ -15,8 +15,41 @@ Text Domain: java-d
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/fonts/IRANSansWeb.eot);
+    src: url('./assets/fonts/IRANSansWeb.eot?#iefix') format('embedded-opentype'), url(./assets/fonts/IRANSansWeb.woff2) format('woff2'), url(./assets/fonts/IRANSansWeb.woff) format('woff'), url(./assets/fonts/IRANSansWeb.ttf) format('truetype')
+  }
+  
+  @font-face {
+    font-family: pixelboy-BHoma;
+    src: url('./assets/fonts/pixelboy-BHoma.eot');
+    src: url('./assets/fonts/pixelboy-BHoma.eot?#iefix') format('pixelboy-BHoma-opentype'), url('./assets/fonts/pixelboy-BHoma.woff') format('woff'), url('./assets/fonts/pixelboy-BHoma.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
 body{
+
     padding: 0;
     margin: 0;
     background-color: aqua;
+    font-family: 'IRANSans' ,'pixelboy-BHoma' !important;
+}
+#search-form{
+    width: 25%;
+    display: flex;
+    direction: ltr;
+}
+.form-control{
+    font-size: 0.8rem;
+    direction: rtl;
 }

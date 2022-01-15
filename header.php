@@ -6,7 +6,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="<?php language_attributes(); ?> ">
+<html <?php language_attributes();?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ) ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,5 +21,8 @@ if(function_exists('wp_body_open')){
     wp_body_open();
 }
 ?>
-
-    <header>header</header>
+<div id="page" class="site"> 
+    <header id="header" class="s-header" role="banner" >
+         <?php get_template_part('./template-parts/header/nav' ); ?>
+    </header>
+</div>    
