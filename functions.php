@@ -5,12 +5,25 @@
  * 
  * @package Gozal
  */
-// print_r(get_template_directory_uri(  ));
+
+ 
+if(!defined('GOZAL_DIR_PATH')){
+   define('GOZAL_DIR_PATH',untrailingslashit(get_template_directory()));
+}
+require_once GOZAL_DIR_PATH.'/inc/help/autoloader.php';
+
+function gozal_get_theme_instance()
+{
+    \Gozal_THEME\Inc\Gozal_THEME::get_instance();
+}
+gozal_get_theme_instance();
+
+
 function gozal_enqueue_scripts()
 {
    //register css
    
-   wp_register_style('gozal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(get_template_directory() . '/style.css'), 'all');
+   wp_register_style('gozal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR . '/style.css'), 'all');
    wp_register_style('bootstrap-css', get_template_directory_uri().'/assets/css/bootstrap.css' , [], false , 'all');
 
    //register java script
