@@ -10,14 +10,19 @@
 if(!defined('GOZAL_DIR_PATH')){
    define('GOZAL_DIR_PATH',untrailingslashit(get_template_directory()));
 }
-require_once GOZAL_DIR_PATH.'/inc/help/autoloader.php';
+
+require_once GOZAL_DIR_PATH . '/inc/help/autoloader.php';
+
+if ( ! defined( 'GOZAL_DIR_URI' ) ) {
+    define( 'GOZAL_DIR_URI', untrailingslashit( get_template_directory_uri() ) );
+}
 
 function gozal_get_theme_instance()
 {
-    \Gozal_THEME\Inc\Gozal_THEME::get_instance();
+ \GOZAL_THEME\Inc\GOZAL_THEME::get_instance();
 }
-gozal_get_theme_instance();
 
+gozal_get_theme_instance();
 
 function gozal_enqueue_scripts()
 {
@@ -46,4 +51,3 @@ function gozal_enqueue_scripts()
 
 add_action('wp_enqueue_scripts', 'gozal_enqueue_scripts');
 
-?>
