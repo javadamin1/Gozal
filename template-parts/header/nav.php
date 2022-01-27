@@ -61,7 +61,12 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li> -->
     </ul>
-    <a class="navbar-brand" href="#">لوگو</a>
+    <a class="navbar-brand" href="#">
+        <?php if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+    ?>
+    </a>
     <form id="search-form" class="my-lg-0" >
       <input  class="form-control mr-sm-2" type="search" placeholder="متن خود را وارد فرمایید" aria-label="Search">
       <button class="btn btn-success my-2 my-sm-0" type="submit">جستجو</button>
