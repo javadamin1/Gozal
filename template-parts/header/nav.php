@@ -1,10 +1,18 @@
 <?php
 /**
  * 
- * header navigation template.
+ * Header Navigation template.
  * 
  *  @package Gozal
  */
+
+$menu_class=\GOZAL_THEME\Inc\Menus::get_instance();
+$header_menu_id = $menu_class -> get_menu_id('gozal-header-menu');
+$header_menu = wp_get_nav_menu_items($header_menu_id);
+echo '<pre>';
+print_r($header_menu);
+wp_die();
+
 ?>
 <!-- <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
     <div class="container" >
@@ -74,4 +82,5 @@
   </div>
  </div>
 </nav>
+
 

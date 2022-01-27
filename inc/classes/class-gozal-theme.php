@@ -11,8 +11,9 @@ class GOZAL_THEME {
     use Singleton;
 
 protected function __construct(){
-        // load class
+        // Load class
     Assets::get_instance();
+    Menus::get_instance();
 
         $this->setup_hooks();
     }
@@ -43,8 +44,22 @@ protected function __construct(){
             'default-attachment'     => 'scroll',  // 'scroll', 'fixed'
             'default-color'          => '#fff',
         ] );
-        add_theme_support()
-
+        add_theme_support('post-thumbnails');
+        add_theme_support('customize-selective-refresh-widgets');
+add_theme_support('automatic-feed-links');
+add_theme_support(
+    'html5',
+    [
+        'search-form',
+        'comment-form',
+       'comment-list',
+        'gallery',
+        'caption',
+        'script',
+        'style',
+    ]
+);
+    add_editor_style();
 
     }
 
