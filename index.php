@@ -54,9 +54,10 @@ if(0!==$index && 0=== $index % $number_columns ){
           <?php
 
       else :
-          get_template_part('/template-part/content-none');
+          get_template_part('/template-parts/content-none');
 
       endif;
+     
       ?>
   </main>
 
