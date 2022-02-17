@@ -1,6 +1,6 @@
 <?php
 
-function g_t_p_custom_thumbnail( $post_id , $size = 'featured-image' , $add_attrib = []){
+function g_t_p_custom_thumbnail( $post_id , $size = 'featured-thumbnail' , $add_attrib = []){
  
     $custom_thumbnail='';
 
@@ -25,6 +25,6 @@ function g_t_p_custom_thumbnail( $post_id , $size = 'featured-image' , $add_attr
 
 }
 
-function t_p_custom_thumbnail( $post_id , $size='featured-image' , $add_attrib=[] ){
+function t_p_custom_thumbnail( $post_id , $size='featured-thumbnail' , $add_attrib=[] ){
     echo g_t_p_custom_thumbnail($post_id,$size , $add_attrib);
 }

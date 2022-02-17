@@ -45,6 +45,12 @@ protected function __construct(){
             'default-color'          => '#fff',
         ] );
         add_theme_support('post-thumbnails');
+
+        /**
+         * Register image sizes.
+         */
+add_image_size( 'featured-thumbnail', 350, 230, true );
+
         add_theme_support('customize-selective-refresh-widgets');
 add_theme_support('automatic-feed-links');
 add_theme_support(
