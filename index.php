@@ -13,6 +13,8 @@ get_header();
           ?>
           <div class="container">
               <?php
+ get_template_part('/template-parts/content');
+
               if(is_home() && ! is_front_page()){
                   ?>
                   <header class="mb-5" >

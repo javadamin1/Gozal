@@ -53,3 +53,7 @@ body{
     font-size: 0.8rem;
     direction: rtl;
 }
+img{
+  width: 100%;
+  height: auto;
+}

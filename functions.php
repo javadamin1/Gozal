@@ -12,6 +12,7 @@ if(!defined('GOZAL_DIR_PATH')){
 }
 
 require_once GOZAL_DIR_PATH . '/inc/help/autoloader.php';
+require_once GOZAL_DIR_PATH . '/inc/help/template-tags.php';
 
 if ( ! defined( 'GOZAL_DIR_URI' ) ) {
     define( 'GOZAL_DIR_URI', untrailingslashit( get_template_directory_uri() ) );
