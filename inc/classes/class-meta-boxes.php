@@ -26,6 +26,7 @@ class Meta_boxes{
          * Action.
          */
         add_action('add_meta_boxes', [$this, 'add_custom_meta_box']);
+        add_action( 'save_post', [$this, 'save_meta_boxes'] );
     }
 
     public function add_custom_meta_box()
@@ -44,16 +45,25 @@ class Meta_boxes{
 
     public function custom_meta_box_html($post)
     {
-        $value = get_post_meta($post->ID, '_hide_page_title', true);
+        $value = get_post_meta($post->ID, '_hide-page-title', true);
 ?>
         <label for="gozal-field"><?php esc_html_e('مخفی کردن سربرگ صفحه', 'gozal') ?></label>
         <select name="gozal_hide_title_field" id="gozal-field" class="postbox">
             <option value=""><?php esc_html_e('انتخاب', 'gozal') ?></option>
-            <option value="yes" <?php selected($value, 'yes'); ?>><?php esc_html_e('بله', 'gozal') ?></option>
-            <option value="no" <?php selected($value, 'no'); ?>>
+            <option value="yes" <?php selected($value,'yes'); ?>><?php esc_html_e('بله', 'gozal') ?></option>
+            <option value="no" <?php selected($value,'no'); ?>>
                 <?php esc_html_e('خیر', 'gozal') ?>
             </option>
         </select>
 <?php
+    }
+   public function save_meta_boxes($post_id) {
+        if ( array_key_exists( 'gozal_hide_title_field', $_POST ) ) {
+            update_post_meta(
+                $post_id,
+                '_hide-page-title',
+                $_POST['gozal_hide_title_field']
+            );
+        }
     }
 }
