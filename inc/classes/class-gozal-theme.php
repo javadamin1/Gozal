@@ -13,6 +13,7 @@ class GOZAL_THEME {
 protected function __construct(){
         // Load class
     Assets::get_instance();
+    Meta_boxes::get_instance();
     Menus::get_instance();
 
         $this->setup_hooks();
