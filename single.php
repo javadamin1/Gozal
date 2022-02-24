@@ -1,5 +1,10 @@
 <?php
+/**
+ * Main template file.
+ * @package Gozal
+ */
+get_header();
 ?>
 <div>
-    dddd
+   single post
 </div>

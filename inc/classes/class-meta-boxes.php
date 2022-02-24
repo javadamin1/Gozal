@@ -46,6 +46,13 @@ class Meta_boxes{
     public function custom_meta_box_html($post)
     {
         $value = get_post_meta($post->ID, '_hide-page-title', true);
+
+            /**
+             * Use nonce for verifiction
+             * استفاده از nonceبرای تایید 
+             */
+            wp_nonce_field( plugin_basename(__FILE__), 'hide_title_meta_box_nonce' );
+
 ?>
         <label for="gozal-field"><?php esc_html_e('مخفی کردن سربرگ صفحه', 'gozal') ?></label>
         <select name="gozal_hide_title_field" id="gozal-field" class="postbox">
@@ -57,7 +64,26 @@ class Meta_boxes{
         </select>
 <?php
     }
+
    public function save_meta_boxes($post_id) {
+
+    /**
+     * When the post is saved or update we get $_POST available
+     * Check if the current user is authorized
+     * زمانی که می خوایم اطلاعات رو ذخیره می کنیم نگاه می کنیم ببینیم که ایا userاجازه دسترسی داره
+     */
+    if(! current_user_can( 'edit_post',$post_id )){
+        return;
+    }
+
+    /**
+     * Check if the nonce value we received is the same we created.
+     * چک می کنیم که اطلاعات ارسالی با اطلاعاتی که می خوایم سیو کنیم یکی باشه
+     */
+    if(! isset($_POST['hide_title_meta_box_nonce']) || ! wp_verify_nonce($_POST['hide_title_meta_box_nonce'], plugin_basename( __FILE__ ) )){
+        return ;
+    }
+
         if ( array_key_exists( 'gozal_hide_title_field', $_POST ) ) {
             update_post_meta(
                 $post_id,
