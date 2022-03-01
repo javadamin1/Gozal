@@ -15,6 +15,7 @@ protected function __construct(){
     Assets::get_instance();
     Meta_boxes::get_instance();
     Menus::get_instance();
+    Admin::get_instance();
 
         $this->setup_hooks();
     }
