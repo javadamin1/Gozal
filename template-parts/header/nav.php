@@ -13,7 +13,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+<nav class="navbar navbar-expand-lg  navbar-light" style="background-color: #e3f2fd;">
     <div class="container">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
             $has_children =! empty( $child_menu_items ) && is_array($child_menu_items);
             if ( !$has_children){
                 ?>
-                <li class="nav-item">
+                <li class="nav-item <?= ($menu_class->check_page($menu_item->url))? 'active':''?> ">
                     <a class="nav-link" href="<?php echo esc_url( $menu_item -> url )?>"> <?php
                         echo esc_html($menu_item -> title)
                         ?> </a>

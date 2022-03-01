@@ -58,6 +58,10 @@ class Menus{
         }
         return $child_menus;
     }
+    public function check_page($url){
+        if(basename(get_permalink())===basename($url))
+        return 1;
+            }
 
 
 }
