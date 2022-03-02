@@ -84,7 +84,7 @@ public function gozal_custom_sections_callback(){
 public function gozal_custom_css_callback(){
     $css=get_option( 'gozal-css' );
     $css = (empty($css) ? '/* Gozal Theme Custom CSS */' : $css );
-    echo '<textarea style="direction:ltr;" placeholder="gozal Custom Css" >'.$css.' </textarea>';
+    echo '<div id="customCss" >'.$css.' </div>';
 }
 
 
