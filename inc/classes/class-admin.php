@@ -108,7 +108,7 @@ public function gozal_theme_sections_callback(){
     echo 'Gozal theme opt';
 }
 public function gozal_theme_option_callback(){
-  $formats
+ // $formats
 }
 
 // Custom css page callback
@@ -117,7 +117,9 @@ public function gozal_custom_sections_callback(){
 }
 public function gozal_custom_css_callback(){
     $css=get_option( 'gozal-css' );
-    $css = (empty($css) ? '/* Gozal Theme Custom CSS */' : $css );
+    $css = (empty($css) ? '/* Gozal Theme Custom CSS */<br> .text {
+        font-size:20px;
+    }' : $css );
     echo '<div id="customCss" >'.$css.' </div>';
 }
 

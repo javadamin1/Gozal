@@ -30,22 +30,42 @@ class Admin_Pages
     ?>
         <h1>Gozal Custom Css</h1>
 
+        <?php
+        settings_errors();
+        ?>
+        <form method="POST" action="options.php" class="gozal-general-form">
+            <?php
+            settings_fields('gozal-custom-css-options');
+            ?>
+            <?php
+            do_settings_sections('gozal-submenu-slug');
+            ?>
+            <?php
+            submit_button();
+            ?>
+        </form>
+    <?php
+    } /// gozal setting css
+
+    public function gozal_theme_option_pages()
+    {
+    ?>
+        <h1>Gozal Theme Options</h1>
+
+        <?php
+        settings_errors();
+        ?>
+        <form method="POST" action="options.php" class="gozal-general-form">
+            <?php
+            settings_fields('gozal-theme-options' );
+            do_settings_sections('gozal-theme-options' );
+            submit_button( );
+            ?>
+        </form>
 <?php
-settings_errors();
-?>
-<form method="POST" action="options.php" class="gozal-general-form" >
-<?php
-settings_fields('gozal-custom-css-options' );
-?>
-<?php
-do_settings_sections('gozal-submenu-slug' );
-?>
-<?php
-submit_button( );
-?>
-</form>
-<?php
-    }
-}
+    } // gozal theme option
+
+
+} ////class tag
 
 ?>

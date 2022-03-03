@@ -50,7 +50,7 @@ class Assets {
         //echo $hook;
        if('gozal-setting_page_gozal-submenu-slug'==$hook){
            wp_enqueue_style('ace', GOZAL_DIR_URI.'/assets/css/ace.css', array(),'1.0.0', 'all' );
-           wp_enqueue_script( 'ace', GOZAL_DIR_URI.'/assets/js/ace/', array(), '1.2.1',true);
+           wp_enqueue_script( 'ace', GOZAL_DIR_URI.'/assets/js/ace/ace.js', array(), '1.2.1',true);
            wp_enqueue_script( 'gozal-custom-css-script', GOZAL_DIR_URI.'/assets/js/gozal-custom-css.js',array('jquery'),'1.0.0',true);
        }
   
