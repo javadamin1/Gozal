@@ -47,6 +47,8 @@ class Admin_Pages
     <?php
     } /// gozal setting css
 
+ 
+
     public function gozal_theme_option_pages()
     {
     ?>

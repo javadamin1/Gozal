@@ -65,7 +65,7 @@ class Admin{
 public function gozal_custom_setting (){
 
     // Theme Options
-    register_setting( 'gozal-theme-options','gozal-theme-option',[$this,'gozal_post_format'] );
+    register_setting( 'gozal-theme-options','post_formats',[$this,'gozal_post_format'] );
     add_settings_section( 'gozal-theme-section','Theme option', [$this,'gozal_theme_sections_callback'],'gozal-theme-options' );
     add_settings_field('post-formats', 'Post Formats', [$this,'gozal_theme_option_callback'],'gozal-theme-options','gozal-theme-section' );
  
@@ -105,10 +105,17 @@ public function gozal_post_format($input){
 }
 
 public function gozal_theme_sections_callback(){
-    echo 'Gozal theme opt';
+    echo 'Gozal theme options';
 }
 public function gozal_theme_option_callback(){
- // $formats
+    $options = get_option('post_formats'); 
+    $formats = array('aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat');
+    $output = '';
+    foreach ( $formats as $format ){
+        $cheched = ( @$options[$format] == 1 ? 'checked' : '' );
+        $output .= '<label> <input type="checkbox"  name="post_formats['.$format.']" id="'.$format.'" value="1" '.$cheched.' > '.$format.' </label> <br>';
+    }
+    echo $output;
 }
 
 // Custom css page callback
@@ -122,8 +129,6 @@ public function gozal_custom_css_callback(){
     }' : $css );
     echo '<div id="customCss" >'.$css.' </div>';
 }
-
-
 
 
 }

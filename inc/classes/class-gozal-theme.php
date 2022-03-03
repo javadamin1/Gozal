@@ -16,17 +16,19 @@ protected function __construct(){
     Meta_boxes::get_instance();
     Menus::get_instance();
     Admin::get_instance();
-
+  
         $this->setup_hooks();
     }
     protected function setup_hooks(){
-
         /**
          * Action.
          */
         add_action('after_setup_theme',[$this , 'setup_theme'] );
     }
+
     public function setup_theme(){
+
+
     add_theme_support('title-tag');
     add_theme_support('custom-logo',[
         'height' =>50,
@@ -67,8 +69,23 @@ add_theme_support(
         'style',
     ]
 );
+
+$options = get_option('post_formats'); 
+$formats = array('aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat');
+$output = array();
+foreach ( $formats as $format ){
+$output[] = ( @$options[$format] == 1 ? $format : '' );
+}
+if( !empty($options)){
+add_theme_support( 'post-formats',$output );
+}
     add_editor_style();
 
     }
+
+
+    
+   
+    
 
 }
