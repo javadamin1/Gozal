@@ -21,6 +21,7 @@ class GOZAL_THEME
         Meta_boxes::get_instance();
         Menus::get_instance();
         Admin::get_instance();
+      Cleanup::get_instance();
 
         $this->setup_hooks();
     }
