@@ -33,7 +33,7 @@ class Admin_Pages
         <?php
         settings_errors();
         ?>
-        <form method="POST" action="options.php" class="gozal-general-form">
+        <form method="POST" id="save-custom-css-form" action="options.php" class="gozal-general-form">
             <?php
             settings_fields('gozal-custom-css-options');
             ?>

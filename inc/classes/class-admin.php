@@ -77,7 +77,7 @@ class Admin
         add_settings_field('custom-backgruand', 'Custom background', [$this, 'gozal_theme_custom_background'], 'gozal-theme-options', 'gozal-theme-section');
 
         // Custom CSS Options
-        register_setting('gozal-custom-css-options', 'gozal-css');
+        register_setting('gozal-custom-css-options', 'gozal_css' , [$this , 'gozal_custom_css']);
         add_settings_section('gozal-custom-css-section', 'Custom CSS', [$this, 'gozal_custom_sections_callback'], 'gozal-submenu-slug');
         add_settings_field('custom-css', 'Insert your custom css', [$this, 'gozal_custom_css_callback'], 'gozal-submenu-slug', 'gozal-custom-css-section');
     }
@@ -122,6 +122,7 @@ class Admin
         }
         echo $output;
     }
+    /// custom header and background
     public function gozal_theme_custom_header()
     {
         $options = get_option('custom_header');
@@ -140,17 +141,20 @@ class Admin
             Activate Custom Background <label>';
         echo $output;
     }
-    // Custom css page callback
+    // Custom css page callback and sanitize
     public function gozal_custom_sections_callback()
     {
         echo 'Custom Gozal Theme whit your own Css ';
     }
     public function gozal_custom_css_callback()
     {
-        $css = get_option('gozal-css');
-        $css = (empty($css) ? '/* Gozal Theme Custom CSS */<br> .text {
-        font-size:20px;
-    }' : $css);
-        echo '<div id="customCss" >' . $css . ' </div>';
+        $css = get_option('gozal_css');
+        $css = (empty($css) ? '/* Gozal Theme Custom CSS */' : $css);
+        echo '<div id="customCss" >' . $css . ' </div><textarea name="gozal_css" id="gozal-text-css" style="display: none;visibility: hidden" >'.$css.'</textarea>';
     }
+    public function gozal_custom_css($input)
+    {
+        return esc_textarea( $input );
+    }
+
 }
