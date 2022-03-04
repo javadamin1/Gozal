@@ -27,12 +27,13 @@ class Assets {
     }
     public function register_style(){
         //register css
-
-        wp_register_style('gozal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
+        wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
+        wp_register_style('gozal-css', GOZAL_DIR_URI.'/assets/css/gozal.css' , [], false ,'all');
         wp_register_style('bootstrap-css', GOZAL_DIR_URI.'/assets/css/bootstrap.css' , [], false ,'all');
 
         //Enqueue css
         wp_enqueue_style('gozal-css');
+        wp_enqueue_style('orginal-css');
         wp_enqueue_style('bootstrap-css');
     }
     public function register_scripts(){
