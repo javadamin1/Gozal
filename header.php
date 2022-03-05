@@ -44,14 +44,20 @@
 
                     <div class="header-content table">
                         <div class="table-cell">
+                              <div class="gozal-logo"></div>
                             <h1 class="site-title gozal-icon">
-                                <span class="gozal-logo"></span>
                                 <span class="hide"><?php bloginfo('name') ?> </span>
                             </h1>
+                            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                             <!--site -->
                         </div> <!--table-cell -->
                     </div>
                     <!--header-content -->
+                    <div class="nav-contaner">
+                        
+                      <?php get_template_part( './template-parts/header/nav1' );?>
+                      
+                    </div>
                 </div>
                 <!--header-container -->
             </div>

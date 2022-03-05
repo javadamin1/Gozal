@@ -1,10 +1,131 @@
-
-$font-stack: Helvetica, sans-serif;
+$font-stack: IRANSans,pixelboy-BHoma , sans-serif;
 $primary-color: #333;
+$header-text-shodow: rgba(0, 0, 0, 0.4);
+$title: rgb(226, 114, 9);
+$height-header : 330px;
+$header-font: IRANNAS ;
 
-body{
-  font: 100% $font-stack;
-  color: $primary-color;
+
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/IRANSansWeb.eot);
+  src: url('../fonts/IRANSansWeb.eot?#iefix') format('embedded-opentype'), url(../fonts/IRANSansWeb.woff2) format('woff2'), url(../fonts/IRANSansWeb.ttf) format('truetype')
 }
-  
+@font-face {
+  font-family: pixelboy-BHoma;
+  src: url('../fonts/pixelboy-BHoma.eot');
+  src: url('../fonts/pixelboy-BHoma.eot?#iefix') format('pixelboy-BHoma-opentype'), url('../fonts/pixelboy-BHoma.woff') format('woff'), url('../fonts/pixelboy-BHoma.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: IRANNAS;
+  src: url('../fonts/IranNastaliq.eot');
+  src: url('../fonts/IranNastaliq.eot?#iefix') format('IranNastaliq-opentype'), url('../fonts/IranNastaliq.woff') format('woff'), url('../fonts/IranNastaliq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+body {
+  font: 100% $font-stack;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.background-image {
+  background: no-repeat center center;
+  background-size: cover;
+}
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.table-cell {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+                    /*=============================
+                                Header
+
+                    ==============================  */
+.header-container {
+  position: relative;
+  display: block;
+  height: $height-header;
+  text-shadow: 0 1px 2px $header-text-shodow;
+}
+
+.site-title {  
+  font-family: $header-font;
+  color: $title;
+  margin: 0;
+}
+.site-description{
+  margin-top: 10px;
+  font-size: 16px;
+  color: $title;
+  margin-top: 0.4em;
+}
+.gozal-logo{
+  background: url('../img/Werewolf.png') no-repeat center center ;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  display: inline-table;
+}
+.navbar-gozal li{
+  display: inline;
+}
+ 
+/*================================== About page==================== */
+.content {
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+.unit-a {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  padding: 32px 8px;
+}
+.a-1,
+.a-2 {
+    width: 50%;
+}
+
+.a-2 {
+    padding-left: 85px;
+    overflow: hidden;
+}
+
+.a-2 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border-bottom-left-radius: 32px;
+}
+
+.a-1 {
+    padding: 0 40px 8px 24px;
+    text-align: justify;
+}
+
+.a-1 a,
+i {
+    color: rgb(223, 157, 71);
+    font-weight: 900;
+}
+
+.connect span{
+  font-size: 16px;
+}

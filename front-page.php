@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div style="background-image: url(<?php header_image();?>);height:300px;width:80%; ">
+<div>
 Front Page</div>
 
 <?php
