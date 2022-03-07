@@ -53,7 +53,7 @@
                         </div> <!--table-cell -->
                     </div>
                     <!--header-content -->
-                    <div class="nav-contaner">
+                    <div class="nav-container">
                         
                       <?php get_template_part( './template-parts/header/nav1' );?>
                       

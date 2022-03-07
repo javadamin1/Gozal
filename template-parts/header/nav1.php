@@ -12,17 +12,18 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
 
 
 ?>
-<nav class="navbar navbar-deafult navbar-gozal" >
+<nav class="navbar navbar-expand-lg navbar-deafult navbar-gozal" >
+
 <?php
 wp_nav_menu( array(
-    'theme_location'=> 'Header Menu',
+    'theme_location'=> 'gozal-header-menu',
     'container'=>false,
     'menu_class'=>'nav navbar-nav'
 ) );
 ?>
 </nav>
 
-
+<!-- 
 <nav class="navbar navbar-expand-lg  navbar-light" style="background-color: #e3f2fd;">
     <div class="container">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -95,4 +96,4 @@ wp_nav_menu( array(
  </div>
 </nav>
 
-
+ -->

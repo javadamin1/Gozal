@@ -71,6 +71,7 @@ body {
   color: $title;
   margin-top: 0.4em;
 }
+
 .gozal-logo{
   background: url('../img/Werewolf.png') no-repeat center center ;
   background-size: cover;
@@ -78,9 +79,11 @@ body {
   width: 100px;
   display: inline-table;
 }
-.navbar-gozal li{
-  display: inline;
-}
+.nav-container{position: absolute;bottom: 0;left: 0;right: 0;}
+.navbar-gozal{text-align: center; border: none;border-radius: 0; min-height: auto; margin-bottom: 0;  }
+
+
+
  
 /*================================== About page==================== */
 .content {
