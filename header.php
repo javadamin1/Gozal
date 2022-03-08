@@ -35,7 +35,7 @@
      get_template_part('./template-parts/header/nav1'); 
      ?>
      <div class="container">
-     <header>
+     <header class="header" > 
          <img src="<?php header_image() ?>" alt="header">
      </header>
  </div>
