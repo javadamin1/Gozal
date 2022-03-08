@@ -4,7 +4,8 @@ $header-text-shodow: rgba(0, 0, 0, 0.4);
 $title: rgb(226, 114, 9);
 $height-header : 330px;
 $header-font: IRANNAS ;
-
+$nav1-back:  #353232;
+$nav1-menu-hover:#f8d3a3 ;
 
 @font-face {
   font-family: IRANSans;
@@ -82,7 +83,192 @@ body {
 .nav-container{position: absolute;bottom: 0;left: 0;right: 0;}
 .navbar-gozal{text-align: center; border: none;border-radius: 0; min-height: auto; margin-bottom: 0;  }
 
+                    /*=============================
+                                nav1 css
 
+                    ==============================  */
+
+                    .container-h {
+                      max-width: 1200px;
+                      height: auto;
+                      margin: auto;
+                      position: sticky;
+                      top: -1px;
+                      height: 5.2rem;
+                      z-index: 100;
+                  }
+                  
+                  .pre-top {
+                      width: 100%;
+                      background-color: $nav1-back;
+                  }
+                  
+                  .top {
+                      display: flex;
+                      flex-direction: row;
+                      align-content: center;
+                      justify-content: space-between;
+                      align-items: center;
+                      width: 78%;
+                      background: transparent;
+                      margin: auto;
+                  }
+                  
+                  .logo {
+                      width: 75px;
+                      height: 75px;
+                      cursor: pointer;
+                      img {
+                      width: 100%;
+                      height: 100%;
+                  }
+                  i {
+                      font-size: 450%;
+                      color: rgb(44, 44, 226);
+                      line-height: 1.2;
+                      text-shadow: -4px 0px 4px lightblue;
+                  } 
+
+                  }
+         .menu {
+              list-style: none;
+            padding: 0;
+            background: transparent;
+            /* width: 400px; */
+
+            li {
+              position: relative;
+              display: inline-block;
+              padding: 0px 12px;
+              color: rgb(223, 157, 71);
+              cursor: pointer;
+
+              a {
+                color: inherit;
+                padding: 8px 0;
+              }
+              &:hover {
+                color: $nav1-menu-hover;
+                transition: all .3s;
+                &::after {
+                  width: 100%;
+              }
+            }
+            &::after {
+              content: "";
+              width: 0%;
+              height: 1px;
+              background: rgb(248, 211, 163);
+              display: block;
+              margin: auto;
+              transition: all .3s;
+          }
+            
+          }
+
+        }  
+        
+        .menu-active {
+          border-top: dashed 2px rgb(44, 44, 226);
+          border-top-left-radius: 50%;
+          border-top-right-radius: 50%;
+      }
+      .sosial {
+        width: 125px;
+        background: transparent;
+        i {
+          color: rgb(223, 157, 71);
+          font-size: 22px;
+          margin-right: 12px;
+          cursor: pointer;
+          &:hover {
+            color: #f8d3a3;
+            text-shadow: 0px 0px 2px yellow;
+        }
+      }
+    }
+
+    .hamburger {
+      width: 30%;
+      display: none;
+      /* position: absolute; */
+      top: .08rem;
+      right: .8rem;
+      text-align: right;
+      border: none;
+      z-index: 90;
+      padding-right: 16px;
+  }
+  
+  .hamburger__button {
+      position: relative;
+      width: 2.2rem;
+      height: 2.2rem;
+      border: none;
+      outline: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: transparent;
+      overflow: hidden;
+      text-indent: 100%;
+      color: transparent;
+      white-space: nowrap;
+      z-index: 90;
+  }
+  .hamburger__icon,
+        .hamburger__icon::before,
+        .hamburger__icon::after {
+            position: absolute;
+            width: 1.6rem;
+            height: .18rem;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .hamburger__icon {
+          top: calc(50% - 1px);
+          left: calc(50% - .8rem);
+          transition: all 0.15s linear;
+          &::before,
+          &::after {
+              content: "";
+              left: 0;
+          }
+          &::before {
+            bottom: .45rem;
+            height: .14rem;
+        }
+        &::after {
+          top: .45rem;
+          transition: all 0.15s linear;
+          height: .16rem;
+      }
+      }
+
+      .toggled.hamburger__button .hamburger__icon {
+        height: .18rem;
+        width: 1.6rem;
+        left: .3rem;
+        top: calc(50% - .06rem);
+        transform: rotate(-45deg);
+        background-color: #fff;
+    }
+    
+    .toggled.hamburger__button .hamburger__icon::after {
+        width: 1.6rem;
+        height: .18rem;
+        top: 0;
+        transform: rotate(-270deg);
+        background-color: #fff;
+    }
+    
+    .toggled.hamburger__button .hamburger__icon::before {
+        transform: scale(0);
+    }
+    
+    .menu-drop {
+        right: 0 !important;
+        transition: all .4s;
+    }
 
  
 /*================================== About page==================== */

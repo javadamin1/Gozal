@@ -13,6 +13,11 @@ get_header();
           ?>
           <div class="container">
               <?php
+              if(is_front_page()){
+
+                  echo "<h1>heloo</h>";
+                  wp_die( );
+              }
               if(is_home() && ! is_front_page()){
                   ?>
                   <header class="mb-5" >

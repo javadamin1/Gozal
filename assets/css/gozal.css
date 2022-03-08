@@ -91,6 +91,190 @@ body {
   margin-bottom: 0;
 }
 
+/*=============================
+            nav1 css
+
+==============================  */
+.container-h {
+  max-width: 1200px;
+  height: auto;
+  margin: auto;
+  position: sticky;
+  top: -1px;
+  height: 5.2rem;
+  z-index: 100;
+}
+
+.pre-top {
+  width: 100%;
+  background-color: #353232;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 78%;
+  background: transparent;
+  margin: auto;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+.logo i {
+  font-size: 450%;
+  color: #2c2ce2;
+  line-height: 1.2;
+  text-shadow: -4px 0px 4px lightblue;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  background: transparent;
+  /* width: 400px; */
+}
+.menu li {
+  position: relative;
+  display: inline-block;
+  padding: 0px 12px;
+  color: #df9d47;
+  cursor: pointer;
+}
+.menu li a {
+  color: inherit;
+  padding: 8px 0;
+}
+.menu li:hover {
+  color: #f8d3a3;
+  transition: all 0.3s;
+}
+.menu li:hover::after {
+  width: 100%;
+}
+.menu li::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: #f8d3a3;
+  display: block;
+  margin: auto;
+  transition: all 0.3s;
+}
+
+.menu-active {
+  border-top: dashed 2px #2c2ce2;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.sosial {
+  width: 125px;
+  background: transparent;
+}
+.sosial i {
+  color: #df9d47;
+  font-size: 22px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.sosial i:hover {
+  color: #f8d3a3;
+  text-shadow: 0px 0px 2px yellow;
+}
+
+.hamburger {
+  width: 30%;
+  display: none;
+  /* position: absolute; */
+  top: 0.08rem;
+  right: 0.8rem;
+  text-align: right;
+  border: none;
+  z-index: 90;
+  padding-right: 16px;
+}
+
+.hamburger__button {
+  position: relative;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+  z-index: 90;
+}
+
+.hamburger__icon,
+.hamburger__icon::before,
+.hamburger__icon::after {
+  position: absolute;
+  width: 1.6rem;
+  height: 0.18rem;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.hamburger__icon {
+  top: calc(50% - 1px);
+  left: calc(50% - 0.8rem);
+  transition: all 0.15s linear;
+}
+.hamburger__icon::before, .hamburger__icon::after {
+  content: "";
+  left: 0;
+}
+.hamburger__icon::before {
+  bottom: 0.45rem;
+  height: 0.14rem;
+}
+.hamburger__icon::after {
+  top: 0.45rem;
+  transition: all 0.15s linear;
+  height: 0.16rem;
+}
+
+.toggled.hamburger__button .hamburger__icon {
+  height: 0.18rem;
+  width: 1.6rem;
+  left: 0.3rem;
+  top: calc(50% - 0.06rem);
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+
+.toggled.hamburger__button .hamburger__icon::after {
+  width: 1.6rem;
+  height: 0.18rem;
+  top: 0;
+  transform: rotate(-270deg);
+  background-color: #fff;
+}
+
+.toggled.hamburger__button .hamburger__icon::before {
+  transform: scale(0);
+}
+
+.menu-drop {
+  right: 0 !important;
+  transition: all 0.4s;
+}
+
 /*================================== About page==================== */
 .content {
   background-color: #fff;
