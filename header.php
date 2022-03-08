@@ -30,15 +30,18 @@
     if (function_exists('wp_body_open')) {
         wp_body_open();
     }
-    ?>
-    <!-- <div id="page" class="site">
-        <header id="header" class="s-header" role="banner">
-          <?php // get_template_part('./template-parts/header/nav'); 
-            ?> 
-        </header>
-    </div> -->
-    <?php 
+    if(get_option('custom_navbar')):
+
      get_template_part('./template-parts/header/nav1'); 
+     ?>
+     <div class="container">
+     <header>
+         <img src="<?php header_image() ?>" alt="header">
+     </header>
+ </div>
+<?php
+
+    else:
         ?>
    
     <div class="container">
@@ -59,7 +62,7 @@
                     <!--header-content -->
                     <div class="nav-container">
                         
-                      <?php get_template_part( './template-parts/header/nav1' );?>
+                      <?php get_template_part( './template-parts/header/nav' );?>
                       
                     </div>
                 </div>
@@ -69,4 +72,7 @@
         </div>
         <!--row -->
     </div>
+    <?php
+    endif;
+    ?>
     <!--cantainer -->
