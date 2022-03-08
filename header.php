@@ -37,6 +37,10 @@
             ?> 
         </header>
     </div> -->
+    <?php 
+     get_template_part('./template-parts/header/nav1'); 
+        ?>
+   
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
