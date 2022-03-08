@@ -6,10 +6,16 @@
  */
 
 get_header();
+$the_post_id = get_the_ID();
+$hide_title= get_post_meta($the_post_id, '_hide-page-title', true);
+$heading_class=!empty($hide_title) && 'yes' === $hide_title ? 'hide' : '';
 
-$a=0;
+$has_post_thumbnail = get_the_post_thumbnail($the_post_id);
+
+$a=3;
 if ( have_posts() ) : while ( have_posts() ) : the_post();
-
+ the_title();
+ the_content();
 
     ?>
  <div class="container">
@@ -48,7 +54,13 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                     </div>
                 </div>
                 <div class="b-2">
-                    <img src="<?= GOZAL_DIR_URI.'/assets/img'; ?>/aa.jpg" alt="">
+                    <?php
+                if($has_post_thumbnail){
+                    ?>
+                    <img src="<?= the_post_thumbnail()?>" alt="">
+                    <?php
+                }
+                ?>
                 </div>
             </div>
             <div class="unit-b unit-c">
@@ -66,10 +78,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                     </div>
                 </div>
                 <div class="b-2">
-                    <img src="<?= GOZAL_DIR_URI.'/assets/img'; ?>/rogan.jpg" alt="">
+                    <img src="<?=  g_t_p_custom_thumbnail(get_POStid);?>" alt="">
                 </div>
             </div>
-            <div class="unit-b unit-c">
+            <div class="unit-b">
                 <div class="b-1">
                     <div class="b-1-a">
                         <div class="b-inner">
