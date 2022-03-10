@@ -31,7 +31,15 @@ class GOZAL_THEME
          * Action.
          */
         add_action('after_setup_theme', [$this, 'setup_theme']);
+        add_action('after_setup_theme', [$this,'Po_theme_setup']);
     }
+    
+/**
+ * Load translations for gozal_theme
+ */
+ public function PO_theme_setup(){
+    load_theme_textdomain('gozal',get_template_directory() . '/languages');
+}
 
     public function setup_theme()
     {

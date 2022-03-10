@@ -48,7 +48,7 @@ class Admin
         add_submenu_page(
             'tools-gozal-theme',
             'My Theme Option',
-            'Theme Options',
+            esc_html__('Theme Options' ,'gozal' ),
             'manage_options',
             'gozal-theme-options',
             [$this, 'gozal_theme_option_page']
@@ -111,7 +111,7 @@ class Admin
    
     public function gozal_theme_sections_callback()
     {
-        echo 'Gozal theme options';
+        echo _e('Gozal theme options!', 'gozal' );
     }
     public function gozal_theme_option_callback()
     {
