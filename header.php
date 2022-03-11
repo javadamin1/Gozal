@@ -30,9 +30,10 @@
     if (function_exists('wp_body_open')) {
         wp_body_open();
     }
-    if(get_option('custom_navbar')):
+    if(get_option('custom_navbar')){
 
      get_template_part('./template-parts/header/nav1'); 
+     if(is_home() && is_front_page()){
      ?>
      <div class="container">
      <header class="header" > 
@@ -40,8 +41,8 @@
      </header>
  </div>
 <?php
-
-    else:
+}
+    }else{
         ?>
    
     <div class="container">
@@ -73,6 +74,6 @@
         <!--row -->
     </div>
     <?php
-    endif;
+    }
     ?>
     <!--cantainer -->

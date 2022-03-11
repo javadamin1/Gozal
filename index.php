@@ -4,6 +4,9 @@
  * @package Gozal
  */
 get_header();
+?>
+<div id="footer-height" >
+<?php
 get_template_part('/front-page');
 ?>
   <!-- <main id="main" class="site-main mt-5" role="main" >
@@ -69,3 +72,4 @@ get_template_part('/front-page');
 get_footer();
 
 ?>
+</div>

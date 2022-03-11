@@ -16,3 +16,7 @@ msgstr ""
 #: template-parts/inc/class-admin-pages.php:22
 msgid "Gozal Theme Options"
 msgstr "گزینه های تم گوزل/Gozal"
+
+#: template-parts/footer.php:15
+msgid "Developed by"
+msgstr "طراحی و توسعه توسط"

@@ -158,7 +158,7 @@ body {
   list-style: none;
   padding: 0;
   background: transparent;
-  /* width: 400px; */
+  margin: 0;
 
   li {
     position: relative;
@@ -293,6 +293,46 @@ body {
   transition: all 0.4s;
 }
 
+/* ================================== Footer ==================== */
+
+#page-height{
+position: relative;
+min-height: 100vh;
+}
+#footer-height{
+  padding-bottom: 2.5rem;
+}
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.footer {
+  width: 100%;
+  height: 2.5rem;
+ text-align: center;
+  background-color: #000;
+  //padding: 10px;
+  a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    &:hover {
+        font-size: 17px;
+        color: #189abb;
+        span{
+          font-size: 17px;
+          color: #0ab418;
+        }
+      }
+    span {
+      font-size: 15px;
+      color: #ffd700;
+      
+    }
+  }
+}
+
 /*================================== Front page==================== */
 
 .unit-a {
@@ -390,7 +430,7 @@ body {
   img {
     width: 100%;
     height: 100%;
-}
+  }
 }
 
 /*================================== About page==================== */
@@ -405,9 +445,10 @@ body {
   flex-direction: row;
   background-color: white;
   width: 100%;
-  height: 300px;
+  height: 30rem;
   overflow: hidden;
-  padding: 32px 8px;
+  padding: 32px 8px; 
+ 
 }
 .a-1,
 .a-2 {
@@ -415,17 +456,16 @@ body {
 }
 
 .a-2 {
-  padding-left: 85px;
   overflow: hidden;
-}
-
-.a-2 img {
-  width: 100%;
+  padding: 12px 12px 12px 56px;
+  img{
+     width: 100%;
   height: 100%;
   border-radius: 10px;
+  box-shadow: #1045bb 1px 14px 12px 3px;
   border-bottom-left-radius: 32px;
+  }
 }
-
 .a-1 {
   padding: 0 40px 8px 24px;
   text-align: justify;
