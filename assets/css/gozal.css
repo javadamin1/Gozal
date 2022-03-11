@@ -165,6 +165,7 @@ body {
 .menu li a {
   color: inherit;
   padding: 8px 0;
+  text-decoration: none;
 }
 .menu li:hover {
   color: #f8d3a3;
