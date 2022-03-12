@@ -1,36 +1,36 @@
-$font-stack: pixelboy-BNazanin, sans-serif;
+$font-stack: IRANSans, pixelboy-BHoma, sans-serif;
 $primary-color: #333;
 $header-text-shodow: rgba(0, 0, 0, 0.4);
 $title: rgb(226, 114, 9);
 $height-header: 330px;
-$header-font: pixelboy-BNazanin;
+$header-font: IRANNAS;
 $nav1-back: #353232;
 $nav1-menu-hover: #f8d3a3;
 
-// @font-face {
-//   font-family: IRANSans;
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url(../fonts/IRANSansWeb.eot);
-//   src: url("../fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"),
-//     url(../fonts/IRANSansWeb.woff2) format("woff2"), url(../fonts/IRANSansWeb.ttf) format("truetype");
-// }
 @font-face {
-  font-family: pixelboy-BNazanin;
-  src: url("../fonts/pixelboy-BNazanin.eot");
-  src: url("../fonts/pixelboy-BNazanin.eot?#iefix") format("pixelboy-BNazanin-opentype"),
-    url("../fonts/pixelboy-BNazanin.woff") format("woff"), url("../fonts/pixelboy-BNazanin.ttf") format("truetype");
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/IRANSansWeb.eot);
+  src: url("../fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"),
+    url(../fonts/IRANSansWeb.woff2) format("woff2"), url(../fonts/IRANSansWeb.ttf) format("truetype");
+}
+@font-face {
+  font-family: pixelboy-BHoma;
+  src: url("../fonts/pixelboy-BHoma.eot");
+  src: url("../fonts/pixelboy-BHoma.eot?#iefix") format("pixelboy-BHoma-opentype"),
+    url("../fonts/pixelboy-BHoma.woff") format("woff"), url("../fonts/pixelboy-BHoma.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-// @font-face {
-//   font-family: IRANNAS;
-//   src: url("../fonts/IranNastaliq.eot");
-//   src: url("../fonts/IranNastaliq.eot?#iefix") format("IranNastaliq-opentype"),
-//     url("../fonts/IranNastaliq.woff") format("woff"), url("../fonts/IranNastaliq.ttf") format("truetype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: IRANNAS;
+  src: url("../fonts/IranNastaliq.eot");
+  src: url("../fonts/IranNastaliq.eot?#iefix") format("IranNastaliq-opentype"),
+    url("../fonts/IranNastaliq.woff") format("woff"), url("../fonts/IranNastaliq.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   font: 100% $font-stack;

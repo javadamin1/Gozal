@@ -1,26 +1,12 @@
 @font-face {
-  font-family: IRANSans;
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/IRANSansWeb.eot);
-  src: url("../fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"), url(../fonts/IRANSansWeb.woff2) format("woff2"), url(../fonts/IRANSansWeb.ttf) format("truetype");
-}
-@font-face {
-  font-family: pixelboy-BHoma;
-  src: url("../fonts/pixelboy-BHoma.eot");
-  src: url("../fonts/pixelboy-BHoma.eot?#iefix") format("pixelboy-BHoma-opentype"), url("../fonts/pixelboy-BHoma.woff") format("woff"), url("../fonts/pixelboy-BHoma.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: IRANNAS;
-  src: url("../fonts/IranNastaliq.eot");
-  src: url("../fonts/IranNastaliq.eot?#iefix") format("IranNastaliq-opentype"), url("../fonts/IranNastaliq.woff") format("woff"), url("../fonts/IranNastaliq.ttf") format("truetype");
+  font-family: pixelboy-BNazanin;
+  src: url("../fonts/pixelboy-BNazanin.eot");
+  src: url("../fonts/pixelboy-BNazanin.eot?#iefix") format("pixelboy-BNazanin-opentype"), url("../fonts/pixelboy-BNazanin.woff") format("woff"), url("../fonts/pixelboy-BNazanin.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 body {
-  font: 100% IRANSans, pixelboy-BHoma, sans-serif;
+  font: 100% pixelboy-BNazanin, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -67,7 +53,7 @@ body {
 }
 
 .site-title {
-  font-family: IRANNAS;
+  font-family: pixelboy-BNazanin;
   color: #e27209;
   margin: 0;
 }

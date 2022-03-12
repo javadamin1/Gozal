@@ -1,67 +1,38 @@
-$font-stack: pixelboy-BNazanin, sans-serif;
-$primary-color: #333;
-$header-text-shodow: rgba(0, 0, 0, 0.4);
-$title: rgb(226, 114, 9);
-$height-header: 330px;
-$header-font: pixelboy-BNazanin;
-$nav1-back: #353232;
-$nav1-menu-hover: #f8d3a3;
-
-// @font-face {
-//   font-family: IRANSans;
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url(../fonts/IRANSansWeb.eot);
-//   src: url("../fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"),
-//     url(../fonts/IRANSansWeb.woff2) format("woff2"), url(../fonts/IRANSansWeb.ttf) format("truetype");
-// }
-@font-face {
-  font-family: pixelboy-BNazanin;
-  src: url("../fonts/pixelboy-BNazanin.eot");
-  src: url("../fonts/pixelboy-BNazanin.eot?#iefix") format("pixelboy-BNazanin-opentype"),
-    url("../fonts/pixelboy-BNazanin.woff") format("woff"), url("../fonts/pixelboy-BNazanin.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-// @font-face {
-//   font-family: IRANNAS;
-//   src: url("../fonts/IranNastaliq.eot");
-//   src: url("../fonts/IranNastaliq.eot?#iefix") format("IranNastaliq-opentype"),
-//     url("../fonts/IranNastaliq.woff") format("woff"), url("../fonts/IranNastaliq.ttf") format("truetype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
 body {
-  font: 100% $font-stack;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-#page-height{
+
+#page-height {
   position: relative;
   min-height: 100vh;
-    width: 100%;
-    box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
 }
-#footer-height{
+
+#footer-height {
   padding-bottom: 2.5rem;
 }
+
 .background-image {
   background: no-repeat center center;
   background-size: cover;
 }
+
 .table {
   display: table;
   width: 100%;
   height: 100%;
 }
+
 .table-cell {
   display: table-cell;
   width: 100%;
   height: 100%;
   vertical-align: middle;
 }
+
 /*=============================
                                 Header
 
@@ -69,19 +40,20 @@ body {
 .header-container {
   position: relative;
   display: block;
-  height: $height-header;
-  text-shadow: 0 1px 2px $header-text-shodow;
+  height: 330px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .site-title {
-  font-family: $header-font;
-  color: $title;
+ 
+  color: #e27209;
   margin: 0;
 }
+
 .site-description {
   margin-top: 10px;
   font-size: 16px;
-  color: $title;
+  color: #e27209;
   margin-top: 0.4em;
 }
 
@@ -92,12 +64,14 @@ body {
   width: 100px;
   display: inline-table;
 }
+
 .nav-container {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
+
 .navbar-gozal {
   text-align: center;
   border: none;
@@ -115,26 +89,26 @@ body {
   justify-content: center;
   width: 100%;
   height: auto;
-  background-color: rgb(53, 50, 50);
+  background-color: #353232;
   margin: auto;
-  img {
-    width: 100%;
-    height: 100%;
-  }
 }
+.header img {
+  width: 100%;
+  height: 100%;
+}
+
 .container-h {
   max-width: 1200px;
   height: auto;
   margin: auto;
   position: sticky;
   top: -1px;
-
   z-index: 100;
 }
 
 .pre-top {
   width: 100%;
-  background-color: $nav1-back;
+  background-color: #353232;
 }
 
 .top {
@@ -152,72 +126,72 @@ body {
   width: 75px;
   height: 75px;
   cursor: pointer;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-  i {
-    font-size: 450%;
-    color: rgb(44, 44, 226);
-    line-height: 1.2;
-    text-shadow: -4px 0px 4px lightblue;
-  }
 }
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+.logo i {
+  font-size: 450%;
+  color: #2c2ce2;
+  line-height: 1.2;
+  text-shadow: -4px 0px 4px lightblue;
+}
+
 .menu {
   list-style: none;
   padding: 0;
   background: transparent;
   margin: 0;
-
-  li {
-    position: relative;
-    display: inline-block;
-    padding: 5px 12px;
-    color: rgb(223, 157, 71);
-    cursor: pointer;
-
-    a {
-      color: inherit;
-      padding: 8px 0;
-      text-decoration: none;
-    }
-    &:hover {
-      color: $nav1-menu-hover;
-      transition: all 0.3s;
-      &::after {
-        width: 100%;
-      }
-    }
-    &::after {
-      content: "";
-      width: 0%;
-      height: 1px;
-      background: rgb(248, 211, 163);
-      display: block;
-      margin: auto;
-      transition: all 0.3s;
-    }
-  }
+}
+.menu li {
+  position: relative;
+  display: inline-block;
+  padding: 5px 12px;
+  color: #df9d47;
+  cursor: pointer;
+}
+.menu li a {
+  color: inherit;
+  padding: 8px 0;
+  text-decoration: none;
+}
+.menu li:hover {
+  color: #f8d3a3;
+  transition: all 0.3s;
+}
+.menu li:hover::after {
+  width: 100%;
+}
+.menu li::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: #f8d3a3;
+  display: block;
+  margin: auto;
+  transition: all 0.3s;
 }
 
 .menu-active {
-  border-top: dashed 2px rgb(44, 44, 226);
+  border-top: dashed 2px #2c2ce2;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
 }
+
 .sosial {
   width: 125px;
   background: transparent;
-  i {
-    color: rgb(223, 157, 71);
-    font-size: 22px;
-    margin-right: 12px;
-    cursor: pointer;
-    &:hover {
-      color: #f8d3a3;
-      text-shadow: 0px 0px 2px yellow;
-    }
-  }
+}
+.sosial i {
+  color: #df9d47;
+  font-size: 22px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.sosial i:hover {
+  color: #f8d3a3;
+  text-shadow: 0px 0px 2px yellow;
 }
 
 .hamburger {
@@ -247,6 +221,7 @@ body {
   white-space: nowrap;
   z-index: 90;
 }
+
 .hamburger__icon,
 .hamburger__icon::before,
 .hamburger__icon::after {
@@ -256,24 +231,24 @@ body {
   border-radius: 10px;
   background-color: #fff;
 }
+
 .hamburger__icon {
   top: calc(50% - 1px);
   left: calc(50% - 0.8rem);
   transition: all 0.15s linear;
-  &::before,
-  &::after {
-    content: "";
-    left: 0;
-  }
-  &::before {
-    bottom: 0.45rem;
-    height: 0.14rem;
-  }
-  &::after {
-    top: 0.45rem;
-    transition: all 0.15s linear;
-    height: 0.16rem;
-  }
+}
+.hamburger__icon::before, .hamburger__icon::after {
+  content: "";
+  left: 0;
+}
+.hamburger__icon::before {
+  bottom: 0.45rem;
+  height: 0.14rem;
+}
+.hamburger__icon::after {
+  top: 0.45rem;
+  transition: all 0.15s linear;
+  height: 0.16rem;
 }
 
 .toggled.hamburger__button .hamburger__icon {
@@ -303,11 +278,12 @@ body {
 }
 
 /* ================================== Footer ==================== */
-footer{
-    position: absolute;
-    width: 100%;
+footer {
+  position: absolute;
+  width: 100%;
   bottom: 0;
 }
+
 .footer {
   display: flex;
   width: 100%;
@@ -315,28 +291,26 @@ footer{
   align-items: center;
   justify-content: center;
   background-color: #000;
-  a {
-    text-decoration: none;
-    font-size: 15px;
-    color: #fff;
-    &:hover {
-        font-size: 17px;
-        color: #189abb;
-        span{
-          font-size: 17px;
-          color: #0ab418;
-        }
-      }
-    span {
-      font-size: 15px;
-      color: #ffd700;
-      
-    }
-  }
+}
+.footer a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #fff;
+}
+.footer a:hover {
+  font-size: 17px;
+  color: #189abb;
+}
+.footer a:hover span {
+  font-size: 17px;
+  color: #0ab418;
+}
+.footer a span {
+  font-size: 15px;
+  color: #ffd700;
 }
 
 /*================================== Front page==================== */
-
 .unit-a {
   display: flex;
   flex-direction: row;
@@ -358,20 +332,21 @@ footer{
 .unit-c {
   direction: ltr;
   background-color: #000;
-  h2 {
-    color: black !important;
-  }
-  p {
-    color: rgb(59, 59, 59) !important;
-  }
-  .b-1,
-  .b-1-a {
-    background-color: white !important;
-  }
-  .b-inner {
-    background-color: rgb(236, 236, 236) !important;
-  }
 }
+.unit-c h2 {
+  color: black !important;
+}
+.unit-c p {
+  color: #3b3b3b !important;
+}
+.unit-c .b-1,
+.unit-c .b-1-a {
+  background-color: white !important;
+}
+.unit-c .b-inner {
+  background-color: #ececec !important;
+}
+
 .a-1,
 .a-2 {
   width: 50%;
@@ -380,42 +355,44 @@ footer{
 .a-2 {
   padding-left: 85px;
   overflow: hidden;
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border-bottom-left-radius: 32px;
-  }
+}
+.a-2 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border-bottom-left-radius: 32px;
 }
 
 .a-1 {
   padding: 0 40px 8px 24px;
   text-align: justify;
-  a,
-  i {
-    color: rgb(223, 157, 71);
-    font-weight: 900;
-  }
 }
+.a-1 a,
+.a-1 i {
+  color: #df9d47;
+  font-weight: 900;
+}
+
 .b-1 {
   width: 35%;
   padding: 20px;
   background-color: black;
   text-align: center;
-  h2 {
-    color: white;
-  }
-  p {
-    color: rgb(170, 170, 170);
-    font-weight: 300;
-  }
 }
+.b-1 h2 {
+  color: white;
+}
+.b-1 p {
+  color: #aaaaaa;
+  font-weight: 300;
+}
+
 .b-1-a {
   width: 100%;
   height: 100%;
   padding: 50px 0;
   background-color: black;
-  border: solid 2px rgb(223, 157, 71);
+  border: solid 2px #df9d47;
   border-left: none;
   border-right: none;
 }
@@ -423,16 +400,16 @@ footer{
 .b-inner {
   width: 100%;
   height: 100%;
-  background-color: rgb(22, 22, 22);
+  background-color: #161616;
   padding: 16px;
 }
 
 .b-2 {
   width: 65%;
-  img {
-    width: 100%;
-    height: 100%;
-  }
+}
+.b-2 img {
+  width: 100%;
+  height: 100%;
 }
 
 /*================================== About page==================== */
@@ -441,15 +418,17 @@ footer{
   height: auto;
   z-index: 1;
 }
+
 .unit-aa {
   min-height: 30rem;
 }
 
 .a-2a {
   padding: 12px 19px 24px 48px;
-  img{
-    box-shadow: #1045bb 2px 4px 16px 1px;
-  }
   background: #0ab418 center center cover;
 }
+.a-2a img {
+  box-shadow: #1045bb 2px 4px 16px 1px;
+}
 
+/*# sourceMappingURL=gozal.css.map */
