@@ -6,31 +6,31 @@
  * @package gozal
  */
 ?>
-<div class="javad" style="min-height: 100vh;
-    width: 100%;
-    box-sizing: border-box;" >
-
+<div id="page-height"  >
+<div id="footer-height">
 
 <?php
 get_header();
 ?>
  
-  <div class="container-h">  
-    <div class="content" style="min-height: 10vh;margin: 1.5em;width: auto !important;">
-        <div class="unit-a">
+  <div class="container">  
+    <div class="content">
+        <div class="unit-a unit-aa ">
             <div class="a-1" style="width: 65%;">
                 <div class="connect">
                         <?php the_content() ?>
                 </div>
 
             </div>
-            <div class="a-2 " style="width: 70%;">
-                <img src="<?= the_post_thumbnail() ?>" alt="">
+           
+            <div class="a-2 a-2a" style="width: 70%;">
+              <?= the_post_thumbnail() ?>
             </div>
         </div>
     </div>
-</div>
-</div>
+</div><!--container -->
+</div><!--footer-height -->
 <?php
 get_footer();
 ?>
+</div><!--page-height -->

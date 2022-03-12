@@ -6,6 +6,10 @@
  * @package Gozal
  */
 
+?>
+<div id="page-height"  >
+<div id="footer-height">
+<?php
 get_header();
 $the_post_id = get_the_ID();
 $hide_title = get_post_meta($the_post_id, '_hide-page-title', true);
@@ -90,7 +94,8 @@ $has_post_thumbnail = get_the_post_thumbnail($the_post_id);
     <!--contect-->
 </div>
 <!--container -->
-
+</div><!--footer-height -->
 <?php
 get_footer();
 ?>
+</div><!--page-height -->
