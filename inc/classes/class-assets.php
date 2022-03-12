@@ -30,7 +30,7 @@ class Assets {
         wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
         wp_register_style('gozal-css', GOZAL_DIR_URI.'/assets/css/gozal.css' , [], false ,'all');
         wp_register_style('bootstrap-css', GOZAL_DIR_URI.'/assets/css/bootstrap.css' , [], false ,'all');
-        wp_register_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' , [], false ,'all');
+        wp_register_style('fontawesome', GOZAL_DIR_URI.'/assets/css/all.css' , [], false ,'all');
 
         //Enqueue css
         wp_enqueue_style('fontawesome');
@@ -53,7 +53,7 @@ class Assets {
         //echo $hook;
        if('gozal-setting_page_gozal-submenu-slug'==$hook){
            wp_enqueue_style('ace', GOZAL_DIR_URI.'/assets/css/ace.css', array(),'1.0.0', 'all' );
-           wp_enqueue_script( 'ace','https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js', array('jquery'), '1.2.1',true);
+           wp_enqueue_script( 'ace',GOZAL_DIR_URI . '/assets/js/ace/ace.js', array('jquery'), '1.2.1',true);
            wp_enqueue_script( 'gozal-custom-css-script', GOZAL_DIR_URI.'/assets/js/gozal-custom-css.js',array('jquery'),'1.0.0',true);
        }
   

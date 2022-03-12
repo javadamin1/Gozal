@@ -19,7 +19,7 @@ class Admin_Pages
     public function gozal_admin_pages()
     {
 ?>
-        <h1><?= _e( 'Gozal Theme Options', 'gozal' )  ?></h1>   	
+        <h1><?php echo _e( 'Gozal Theme Options', 'gozal' )  ?></h1>   	
         <h3 class="title">mange Options</h3>
         <p>Customize the default wordpress Appearance Options</p>
     <?php

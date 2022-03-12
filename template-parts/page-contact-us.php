@@ -24,7 +24,7 @@ $image=wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ));
             </div>
            
             <div class="a-2 a-2a" style="width: 70%;">
-            <iframe src="<?= get_option('addres_google_map') ?>" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="<?php echo get_option('addres_google_map') ?>" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@ get_header();
             </div>
            
             <div class="a-2 a-2a" style="width: 70%;">
-              <?= the_post_thumbnail() ?>
+              <?php echo the_post_thumbnail() ?>
             </div>
         </div>
     </div>

@@ -39,11 +39,11 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                                 $has_children = !empty($child_menu_items) && is_array($child_menu_items);
                                 if (!$has_children) {
                         ?>
-                                    <li class="<?= ($menu_class->check_page($menu_item->url)) ? 'menu-active' : '' ?> ">
+                                    <li class="<?php echo ($menu_class->check_page($menu_item->url)) ? 'menu-active' : '' ?> ">
 
                                         <a href="<?php echo esc_url($menu_item->url) ?>"> <?php
-                                                                                                echo esc_html($menu_item->title)
-                                                                                                ?> </a>
+                                                                                            echo esc_html($menu_item->title)
+                                                                                            ?> </a>
                                     </li>
                                 <?php
                                 } else {
