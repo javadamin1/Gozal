@@ -17,6 +17,22 @@ msgstr ""
 msgid "Gozal Theme Options"
 msgstr "گزینه های تم گوزل/Gozal"
 
+#: template-parts/inc/class-admin.php:80
+msgid "Custom Navbar"
+msgstr "منو  سفارشی"
+
+#: template-parts/inc/class-admin.php:81
+msgid "google map Url"
+msgstr "آدرس نقشه گوگل"
+
+#: template-parts/inc/class-admin.php:152
+msgid "Activate Custom menubar"
+msgstr "فعال کردن منو سفارشی"
+
+#: template-parts/inc/class-admin.php:162
+msgid "Enter the Google Maps URL"
+msgstr "آدرس Google Maps را وارد کنید"
+
 #: template-parts/footer.php:15
 msgid "Developed by"
 msgstr "طراحی و توسعه توسط"

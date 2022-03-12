@@ -71,12 +71,14 @@ class Admin
         register_setting('gozal-theme-options', 'custom_header');
         register_setting('gozal-theme-options', 'custom_backgruand');
         register_setting('gozal-theme-options', 'custom_navbar');
+        register_setting('gozal-theme-options', 'addres_google_map');
 
         add_settings_section('gozal-theme-section', 'Theme option', [$this, 'gozal_theme_sections_callback'], 'gozal-theme-options');
         add_settings_field('post-formats', 'Post Formats', [$this, 'gozal_theme_option_callback'], 'gozal-theme-options', 'gozal-theme-section');
         add_settings_field('custom-header', 'Custom Header', [$this, 'gozal_theme_custom_header'], 'gozal-theme-options', 'gozal-theme-section');
         add_settings_field('custom-backgruand', 'Custom background', [$this, 'gozal_theme_custom_background'], 'gozal-theme-options', 'gozal-theme-section');
-        add_settings_field('custom-navbar', 'Custom Navbar', [$this, 'gozal_theme_custom_navbar'], 'gozal-theme-options', 'gozal-theme-section');
+        add_settings_field('custom-navbar',__('Custom Navbar','gozal') , [$this, 'gozal_theme_custom_navbar'], 'gozal-theme-options', 'gozal-theme-section');
+        add_settings_field('addres-google',__('google map Url','gozal'), [$this, 'gozal_theme_addres_google'], 'gozal-theme-options', 'gozal-theme-section');
 
         // Custom CSS Options
         register_setting('gozal-custom-css-options', 'gozal_css' , [$this , 'gozal_custom_css']);
@@ -87,7 +89,6 @@ class Admin
 
     public function gozal_theme_create_page()
     {
-        //
         //require_once GOZAL_DIR_URI.'/inc/pages/gozal-admin.php';
         $custom_page = Admin_Pages::get_instance();
         $custom_page->gozal_admin_pages();
@@ -148,10 +149,20 @@ class Admin
         $options = get_option('custom_navbar');
         $output = '';
             $cheched = (@$options == 1 ? 'checked' : '');
-            $output .= '<label> <input type="checkbox"  name="custom_navbar" id="custom-navbar" value="1" '.$cheched.' > 
-            Activate Custom navbar <label>';
+            $output .= '<label> <input type="checkbox"  name="custom_navbar" id="custom-navbar"value="1" '.$cheched.' >'._e('Activate Custom menubar','gozal').' 
+            <label>';
         echo $output;
     }
+
+    public function gozal_theme_addres_google()
+    {
+        $options = get_option('addres_google_map');
+        $output = '';
+            $output .= '<label> <input type="url"  name="addres_google_map" id="addres-google-map" value="'.$options.'" placeholder="URL Google Map" > 
+            '._e('Enter the Google Maps URL', 'gozal').' <label>';
+        echo $output;
+    }
+
     // Custom css page callback and sanitize
     public function gozal_custom_sections_callback()
     {
