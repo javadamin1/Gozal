@@ -13,7 +13,6 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
 
 ?>
 <nav>
-    <div class="container">
         <div class="pre-top">
             <div class="top">
                 <div class="hamburger">
@@ -28,22 +27,21 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                     ?>
                 </a>
                 <?php
+
                 if (!empty($header_menus) && is_array($header_menus)) {
                 ?>
                     <ul class="menu">
-                        <?php
+                        <?php  
                         foreach ($header_menus as $menu_item) {
-
                             if (!$menu_item->menu_item_parent) {
                                 $child_menu_items = $menu_class->get_child_menu_items($header_menus, $menu_item->ID);
                                 $has_children = !empty($child_menu_items) && is_array($child_menu_items);
                                 if (!$has_children) {
+                                
                         ?>
-                                    <li class="<?php echo ($menu_class->check_page($menu_item->url)) ? 'menu-active' : '' ?> ">
-
-                                        <a href="<?php echo esc_url($menu_item->url) ?>"> <?php
-                                                                                            echo esc_html($menu_item->title)
-                                                                                            ?> </a>
+                       
+                                    <li class="<?php echo (check_page($menu_item->url)) ? 'menu-active' : '' ?> ">
+                                        <a href="<?php echo esc_url($menu_item->url) ?>"> <?php echo esc_html($menu_item->title) ?> </a>
                                     </li>
                                 <?php
                                 } else {
@@ -86,5 +84,5 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                 </div>
             </div>
         </div>
-    </div>
+  
 </nav>

@@ -35,17 +35,14 @@
      get_template_part('./template-parts/header/nav1'); 
      if(is_home() && is_front_page()){
      ?>
-     <div class="container">
      <header class="header" > 
          <img src="<?php header_image() ?>" alt="header">
      </header>
- </div>
+
 <?php
 }
     }else{
         ?>
-   
-    <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <div class="header-container background-image text-center" style="background-image: url(<?php header_image() ?>);">
@@ -72,8 +69,8 @@
             <!--col-xs-12 -->
         </div>
         <!--row -->
-    </div>
+ 
     <?php
     }
     ?>
-    <!--cantainer -->
+   

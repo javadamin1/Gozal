@@ -163,6 +163,7 @@ body {
   color: inherit;
   padding: 8px 0;
   text-decoration: none;
+  font-size: 19px;
 }
 .menu li:hover {
   color: #f8d3a3;
@@ -437,6 +438,46 @@ footer {
 }
 .a-2a img {
   box-shadow: #1045bb 2px 4px 16px 1px;
+}
+
+/*================================== pagination ======================================== */
+.pagination {
+  justify-content: center;
+}
+.pagination a {
+  text-decoration: none;
+}
+.pagination .current li {
+  box-shadow: inset -3px -3px 7px #ffffff73, inset 3px 3px 5px rgba(94, 104, 121, 0.288);
+  font-size: 17px;
+  color: #e20f0f;
+}
+.pagination li {
+  margin: 0px 5px;
+  background: #dde1e7;
+  border-radius: 3px;
+  box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+.pagination li:first-child {
+  margin: 0 15px 0 0;
+}
+.pagination li:last-child {
+  margin: 0 0 0 15px;
+}
+.pagination li a {
+  font-size: 16px;
+  text-align: center;
+  color: #4d3252;
+  height: 35px;
+  width: 35px;
+  display: block;
+  line-height: 40px;
+}
+.pagination li:first-child a {
+  width: 45px;
+}
+.pagination li:last-child a {
+  width: 45px;
 }
 
 /*# sourceMappingURL=gozal.css.map */
