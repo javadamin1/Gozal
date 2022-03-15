@@ -77,9 +77,9 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                     .
                 </div>
                 <div class="sosial">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/<?php echo get_option( 'insta' ) ?>" target="_blank" ><i class="fab fa-instagram"></i></a>
+                    <a href="https://telegram.me/<?php echo get_option( 'telegram' ) ?>"  target="_blank" ><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://wa.me/+<?php echo get_option( 'whatsapp' ) ?>" target="_blank" ><i class="fab fa-whatsapp"></i></a>
 
                 </div>
             </div>

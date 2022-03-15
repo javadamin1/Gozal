@@ -17,6 +17,42 @@ msgstr ""
 msgid "Gozal Theme Options"
 msgstr "گزینه های تم گوزل/Gozal"
 
+#: template-parts/inc/class-admin.php:38
+msgid "Gozal Settings Page"
+msgstr "صفحه تنظیمات گوزل"
+
+#: template-parts/inc/class-admin.php:38
+msgid "Gozal Settings"
+msgstr "تنظیمات گوزل"
+
+#: template-parts/inc/class-admin.php:44
+msgid "General"
+msgstr "عمومی"
+
+#: template-parts/inc/class-admin.php:51
+msgid "My Theme Options"
+msgstr "گزینه های تم من"
+
+#: template-parts/inc/class-admin.php:52
+msgid "Theme Options"
+msgstr "تنظیمات قالب"
+
+#: template-parts/inc/class-admin.php:60
+msgid "custom css"
+msgstr "‫CSSسفارشی"
+
+#: template-parts/inc/class-admin.php:70,136
+msgid "instagram ID"
+msgstr "آیدی اینستاگرام"
+
+#: template-parts/inc/class-admin.php:79,146
+msgid "Telegram ID"
+msgstr "آیدی تلگرام"
+
+#: template-parts/inc/class-admin.php:80,154
+msgid "Whats App Number"
+msgstr "شماره تلفن واتساپ"
+
 #: template-parts/inc/class-admin.php:80
 msgid "Custom Navbar"
 msgstr "منو  سفارشی"
@@ -24,6 +60,26 @@ msgstr "منو  سفارشی"
 #: template-parts/inc/class-admin.php:81
 msgid "google map Url"
 msgstr "آدرس نقشه گوگل"
+
+#: template-parts/inc/class-admin.php:129
+msgid "General Options"
+msgstr "تنظیمات عمومی"
+
+#: template-parts/inc/class-admin.php:135
+msgid "Enter your instagram id"
+msgstr "ایدی اینستاگرام خود را وارد کنید"
+
+#: template-parts/inc/class-admin.php:147
+msgid "Enter your Telegram ID"
+msgstr "ایدی تلگرام خود را وارد کنید"
+
+#: template-parts/inc/class-admin.php:154
+msgid "Enter the number with the country code"
+msgstr "شماره تلفن را با کد کشور وارد کنید"
+
+#: template-parts/inc/class-admin.php:136
+msgid "Gozal theme options"
+msgstr "گزینه های تم گوزل"
 
 #: template-parts/inc/class-admin.php:152
 msgid "Activate Custom menubar"
