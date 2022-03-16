@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Enqueue theme assets
  *
@@ -6,39 +7,54 @@
  */
 
 namespace GOZAL_THEME\Inc;
+
 use GOZAL_THEME\Inc\Traits\Singleton;
 
-class Assets {
+class Assets
+{
     use Singleton;
-    protected function __construct(){
+    protected function __construct()
+    {
 
         // load class
 
         $this->setup_hooks();
     }
-    protected function setup_hooks(){
+    protected function setup_hooks()
+    {
 
         /**
          * Action.
          */
-        add_action('wp_enqueue_scripts',[ $this,'register_style']);
-        add_action('wp_enqueue_scripts',[ $this,'register_scripts']);
-        add_action( 'admin_enqueue_scripts',[$this,'register_admin_style'] );
+        add_action('wp_enqueue_scripts', [$this, 'register_style']);
+        add_action('wp_enqueue_scripts', [$this, 'register_scripts']);
+        add_action('admin_enqueue_scripts', [$this, 'register_admin_style']);
     }
-    public function register_style(){
-        //register css
-        wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
-        wp_register_style('gozal-css', GOZAL_DIR_URI.'/assets/css/gozal.css' , [], false ,'all');
-        wp_register_style('bootstrap-css', GOZAL_DIR_URI.'/assets/css/bootstrap.css' , [], false ,'all');
-        wp_register_style('fontawesome', GOZAL_DIR_URI.'/assets/css/all.css' , [], false ,'all');
+    public function register_style($hook)
+    {
+        if (!is_404()) :
+            //register css
+            wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
+            wp_register_style('gozal-css', GOZAL_DIR_URI . '/assets/css/gozal.css', [], false, 'all');
 
-        //Enqueue css
-        wp_enqueue_style('fontawesome');
-        wp_enqueue_style('gozal-css');
-        wp_enqueue_style('orginal-css');
-        wp_enqueue_style('bootstrap-css');
+            wp_register_style('bootstrap-css', GOZAL_DIR_URI . '/assets/css/bootstrap.css', [], false, 'all');
+            wp_register_style('fontawesome', GOZAL_DIR_URI . '/assets/css/all.css', [], false, 'all');
+
+            //Enqueue css
+
+            wp_enqueue_style('fontawesome');
+            wp_enqueue_style('gozal-css');
+            wp_enqueue_style('bootstrap-css');
+            wp_enqueue_style('orginal-css');
+
+        else :
+            wp_register_style('404', GOZAL_DIR_URI . '/assets/css/404.css', [],filemtime(GOZAL_DIR_PATH . '/assets/css/404.css'), 'all');
+            wp_enqueue_style('404');
+        endif;
     }
-    public function register_scripts(){
+    public function register_scripts()
+    {
+        if(!is_404()):
         //register java script
         wp_register_script('gozal-js', GOZAL_DIR_URI . '/assets/js/main.js', [], filemtime(GOZAL_DIR_PATH . '/assets/js/main.js'), true);
         // wp_register_script('jquery', GOZAL_DIR_URI . '/assets/js/jquery-3.6.0.min.js', ['jquery'], false, true);
@@ -48,14 +64,18 @@ class Assets {
         wp_enqueue_script('gozal-js');
         wp_enqueue_script('bootstrap-js');
         // wp_enqueue_script('jquery');
+        else: 
+            wp_register_script('404', GOZAL_DIR_URI . '/assets/js/404.js', array('jquery'), filemtime(GOZAL_DIR_PATH . '/assets/js/404.js'), true);
+            wp_enqueue_script('404');
+        endif;
     }
-    public function register_admin_style($hook){
+    public function register_admin_style($hook)
+    {
         //echo $hook;
-       if('gozal-setting_page_gozal-submenu-slug'==$hook){
-           wp_enqueue_style('ace', GOZAL_DIR_URI.'/assets/css/ace.css', array(),'1.0.0', 'all' );
-           wp_enqueue_script( 'ace',GOZAL_DIR_URI . '/assets/js/ace/ace.js', array('jquery'), '1.2.1',true);
-           wp_enqueue_script( 'gozal-custom-css-script', GOZAL_DIR_URI.'/assets/js/gozal-custom-css.js',array('jquery'),'1.0.0',true);
-       }
-  
+        if ('gozal-setting_page_gozal-submenu-slug' == $hook) {
+            wp_enqueue_style('ace', GOZAL_DIR_URI . '/assets/css/ace.css', array(), '1.0.0', 'all');
+            wp_enqueue_script('ace', GOZAL_DIR_URI . '/assets/js/ace/ace.js', array('jquery'), '1.2.1', true);
+            wp_enqueue_script('gozal-custom-css-script', GOZAL_DIR_URI . '/assets/js/gozal-custom-css.js', array('jquery'), '1.0.0', true);
+        }
     }
 }

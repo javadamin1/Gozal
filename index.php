@@ -62,7 +62,7 @@ the_post( );
 
                         ?>
                       </p>
-                      <!-- <a class="btn btn-success" href="<?php echo permalink_link() ?>"></a> -->
+                      <!-- <a class="btn btn-success" href="<?php //echo permalink_link() ?>"></a> -->
                     </div>
                   </div>
                 </div>
@@ -75,14 +75,14 @@ the_post( );
               <!--unit-b -->
             </div>
             <!--contect-->
-      <?
+      <?php
           else :
 
             get_template_part('/template-parts/content', get_post_format());
           endif;
         endwhile;
       else :
-      //no posts found
+        get_template_part('/template-parts/content-none');
       endif;
       ?>
     </div>

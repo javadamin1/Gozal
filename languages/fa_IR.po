@@ -92,3 +92,32 @@ msgstr "آدرس Google Maps را وارد کنید"
 #: template-parts/footer.php:15
 msgid "Developed by"
 msgstr "طراحی و توسعه توسط"
+
+#. //////////////////////////////////////////////////////404
+#: 404.php:146
+msgid "We couldn't find what you were looking for."
+msgstr "ما نتوانستیم صفحه مورد نظر را پیدا کنیم."
+
+#: 404.php:168
+msgid "Unfortunately the page you were looking for could not be found. It may be temporarily unavailable, moved or no longer exist."
+msgstr "متاسفانه صفحه شما پیدا نشد،ممکن است موقت از دسترس خارج شده یا کاملا حذف شده باشد."
+
+#: 404.php:169
+msgid "Check the URL you entered for any mistakes and try again. Alternatively, search for whatever is missing or take a look around the rest of our site."
+msgstr "آدرس وارد شده را بررسی کنید و دوباره تلاش کنید.یا چیزی که دنبالش می گردید رو جستجو کنید یا به قسمت های دیگر سایت مراجعه کنید."
+
+#: 404.php:173
+msgid "Search"
+msgstr "جستجو"
+
+#: 404.php:178
+msgid "Home"
+msgstr "خانه"
+
+#: 404.php:179
+msgid "About Us"
+msgstr "درباره ما"
+
+#: 404.php:181
+msgid "Contact Us"
+msgstr "تماس با ما"
