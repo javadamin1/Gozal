@@ -42,7 +42,7 @@
 }
     }else{
         ?>
-        <div class="row">
+       
             <div class="col-xs-12">
                 <div class="header-container background-image text-center" style="background-image: url(<?php header_image() ?>);">
 
@@ -66,8 +66,7 @@
                 <!--header-container -->
             </div>
             <!--col-xs-12 -->
-        </div>
-        <!--row -->
+        
  
     <?php
     }

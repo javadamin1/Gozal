@@ -171,23 +171,23 @@
         <div id="search">
 
         <form role="search" method="get" class="search-form"  action="<?php echo home_url( '/' ); ?>">
-    <label>
+
         <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
         <input type="search" class="search-field"
-            placeholder="<?php esc_html_e('Search', 'gozal') ?>"
-            value="<?php echo get_search_query() ?>" name="s"
-            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-    </label>
+            placeholder="<?php esc_attr_e('Search', 'gozal') ?>"
+             name="s"
+           />
+  
     <input type="submit" class="input-search"
-        value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
+        value="<?php esc_attr_e('Search', 'gozal') ?>" />
 </form>
         </div>
 
         <div id="navigation">
-            <a class="navigation" href=""><?php esc_html_e('Home', 'gozal') ?></a>
-            <a class="navigation" href=""><?php esc_html_e('About Us', 'gozal') ?></a>
+            <a class="navigation" href=<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home', 'gozal') ?></a>
+            <a class="navigation" href="<?php echo esc_url( home_url( '/about-us' ) ); ?>"><?php esc_html_e('About Us', 'gozal') ?></a>
             <!-- <a class="navigation" href="">Site Map</a> -->
-            <a class="navigation" href=""><?php esc_html_e('Contact Us', 'gozal') ?></a>
+            <a class="navigation" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><?php esc_html_e('Contact Us', 'gozal') ?></a>
         </div>
     </div>
 </div>

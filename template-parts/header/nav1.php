@@ -40,7 +40,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                                 
                         ?>
                        
-                                    <li class="<?php echo (check_page($menu_item->url)) ? 'menu-active' : '' ?> ">
+                                    <li class="<?php echo (check_page($menu_item->url)) ? 'menu-active' : ''; ?> ">
                                         <a href="<?php echo esc_url($menu_item->url) ?>"> <?php echo esc_html($menu_item->title) ?> </a>
                                     </li>
                                 <?php

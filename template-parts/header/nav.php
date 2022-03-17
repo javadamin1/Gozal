@@ -6,10 +6,9 @@
  *  @package Gozal
  */
 
-$menu_class=\GOZAL_THEME\Inc\Menus::get_instance();
-$header_menu_id = $menu_class -> get_menu_id('gozal-header-menu');
+$menu_class = \GOZAL_THEME\Inc\Menus::get_instance();
+$header_menu_id = $menu_class->get_menu_id('gozal-header-menu');
 $header_menus = wp_get_nav_menu_items($header_menu_id);
-
 
 ?>
 
@@ -21,10 +20,12 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
   </button>
 
   <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+ 
       <?php
       if( ! empty($header_menus) && is_array($header_menus) ){
         ?>
       <ul class="navbar-nav mr-auto">
+        
         <?php
         foreach ($header_menus as $menu_item){
             if(! $menu_item -> menu_item_parent ){
@@ -32,7 +33,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
             $has_children =! empty( $child_menu_items ) && is_array($child_menu_items);
             if ( !$has_children){
                 ?>
-                <li class="nav-item <?php echo ($menu_class->check_page($menu_item->url))? 'active':''?> ">
+                <li class="nav-item <?php echo check_page($menu_item->url)? 'active':''?> ">
                     <a class="nav-link" href="<?php echo esc_url( $menu_item -> url )?>"> <?php
                         echo esc_html($menu_item -> title)
                         ?> </a>
@@ -83,8 +84,8 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
     ?>
     </a>
     <form id="search-form" class="my-lg-0" >
-      <input  class="form-control mr-sm-2" type="search" placeholder="متن خود را وارد فرمایید" aria-label="Search">
-      <button class="btn btn-success my-2 my-sm-0" type="submit">جستجو</button>
+      <input  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
  </div>

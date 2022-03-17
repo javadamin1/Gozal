@@ -94,7 +94,7 @@ function gozal_image_url($num = 1)
     return $output;
 }
 function check_page($url){
-    if(basename(get_permalink())==='%d8%aa%d8%b9%d9%88%db%8c%d8%b6-%d8%b1%d9%88%d8%ba%d9%86%db%8c' && basename($url)=='wordpress'):
+    if(is_home() && 'wordpress'===basename($url)):
         return 1;
     else:
        if(basename(get_permalink())===basename($url)):
