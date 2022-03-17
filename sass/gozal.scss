@@ -500,3 +500,86 @@ footer {
  
  
 }
+
+
+
+
+          /* --------------------------  media start   -------------------------- */
+        
+          @media (max-width:767px) {
+            .container-lg , .container{
+width: 100%;
+padding: 0;
+            }
+            .top {
+                width: 100%;
+            }
+            .space {
+                display: none;
+            }
+            .menu {
+                position: absolute;
+                background-color: rgb(43, 42, 42);
+                top: 64px;
+                right: -100%;
+                width: 225px;
+                padding: 10px 4px;
+                transition: all .3s;
+                opacity: .85;
+                background: linear-gradient( -90deg, #000, rgba(10, 10, 10, .85), transparent);
+                border-bottom: solid 1px white;
+                min-height: 20vh;
+            }
+            .menu li {
+                display: block;
+                border-top: none !important;
+
+            }
+            .menu li a{
+                display: block;
+                padding: 12px 0;
+            }
+            .menu li::after {
+                width: 0% !important;
+            }
+            .hamburger {
+                display: block;
+            }
+            .unit-a,
+            .unit-b {
+                flex-direction: column !important;
+                height: auto !important;
+            }
+            .b-1,
+            .b-2 {
+                width: 100%;
+                height: auto;
+            }
+            .a-1 {
+                height: auto;
+                padding: 0 24px 8px 24px;
+                width: 100% !important;
+            }
+            .a-2 {
+                width: 100% !important;
+                height: auto;
+                padding: 8px 16px;
+            }
+        }
+        
+        @media (min-width:768px) and (max-width:991px) {
+            .container ,.container-lg {
+                width: 100%;
+                padding: 0 !important;
+            }
+        }
+        
+        @media (min-width:1400px) {}
+        
+        @media (min-width:1612px) {
+            .container {
+                max-width: 1400px !important;
+                width: 1400px !important;
+            }
+
+        }

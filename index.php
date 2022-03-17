@@ -7,7 +7,7 @@
 ?>
 <div id="page-height">
   <div id="footer-height">
-    <div class="container">
+    <div class="container-lg">
       <!-- <div class="unit-a">
             <div class="a-1">
                 <h2>
