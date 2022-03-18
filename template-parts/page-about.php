@@ -8,12 +8,12 @@
 ?>
 <div id="page-height"  >
 <div id="footer-height">
-
+ <div class="container-lg">  
 <?php
 get_header();
 ?>
  
-  <div class="container">  
+ 
     <div class="content">
         <div class="unit-a unit-aa ">
             <div class="a-1" style="width: 65%;">

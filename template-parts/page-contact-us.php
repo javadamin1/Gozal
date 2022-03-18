@@ -7,14 +7,15 @@
  */
 ?>
 <div id="page-height"  >
-<div id="footer-height">
 
+  
+<div id="footer-height">
+  <div class="container-lg">  
 <?php
 get_header();
-$image=wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ));
+//$image=wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ));
 ?>
  <article id="post-<?php the_ID();  ?>"  >
-  <div class="container">  
     <div class="content "  >
         <div class="unit-a unit-aa  " >
             <div class="a-1" style="width: 65%;">
@@ -28,10 +29,11 @@ $image=wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ));
             </div>
         </div>
     </div>
-</div><!--container -->
+  </article>  
+ </div><!--container --> 
 </div><!--footer-height -->
-</article>
 <?php
 get_footer();
 ?>
+
 </div><!--page-height -->
