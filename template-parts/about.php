@@ -11,6 +11,7 @@
  <div class="container-lg">  
 <?php
 get_header();
+echo (is_page_template( 'about.php' ))? 'yes' : 'no';
 ?>
  
  

@@ -32,7 +32,38 @@ class Assets
     }
     public function register_style($hook)
     {
-        if (!is_404()) :
+
+        if (is_404()) :
+
+            wp_register_style('404', GOZAL_DIR_URI . '/assets/css/404.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/404.css'), 'all');
+
+            wp_enqueue_style('404');
+
+        elseif (is_front_page()) :
+
+            wp_register_style('lightbox', GOZAL_DIR_URI . '/assets/css/lightbox.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/lightbox.css'), 'all');
+            wp_register_style('owl.carousel.min', GOZAL_DIR_URI . '/assets/css/owl.carousel.min.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/owl.carousel.min.css'), 'all');
+            wp_register_style('owl.theme.default', GOZAL_DIR_URI . '/assets/css/owl.theme.default.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/owl.theme.default.css'), 'all');
+            wp_register_style('style', GOZAL_DIR_URI . '/assets/css/style.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/style.css'), 'all');
+
+
+            wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
+            wp_register_style('gozal-css', GOZAL_DIR_URI . '/assets/css/gozal.css', [], false, 'all');
+
+            wp_register_style('bootstrap-css', GOZAL_DIR_URI . '/assets/css/bootstrap.css', [], false, 'all');
+            wp_register_style('fontawesome', GOZAL_DIR_URI . '/assets/css/all.css', [], false, 'all');
+
+            //Enqueue css
+            // wp_enqueue_style('lightbox');
+            // wp_enqueue_style('owl.carousel.min');
+            // wp_enqueue_style('owl.theme.default');
+            // wp_enqueue_style('style');
+            wp_enqueue_style('fontawesome');
+            wp_enqueue_style('gozal-css');
+            wp_enqueue_style('bootstrap-css');
+            wp_enqueue_style('orginal-css');
+
+        else :
             //register css
             wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
             wp_register_style('gozal-css', GOZAL_DIR_URI . '/assets/css/gozal.css', [], false, 'all');
@@ -47,24 +78,23 @@ class Assets
             wp_enqueue_style('bootstrap-css');
             wp_enqueue_style('orginal-css');
 
-        else :
-            wp_register_style('404', GOZAL_DIR_URI . '/assets/css/404.css', [],filemtime(GOZAL_DIR_PATH . '/assets/css/404.css'), 'all');
-            wp_enqueue_style('404');
+
+
         endif;
     }
     public function register_scripts()
     {
-        if(!is_404()):
-        //register java script
-        wp_register_script('gozal-js', GOZAL_DIR_URI . '/assets/js/main.js', [], filemtime(GOZAL_DIR_PATH . '/assets/js/main.js'), true);
-        // wp_register_script('jquery', GOZAL_DIR_URI . '/assets/js/jquery-3.6.0.min.js', ['jquery'], false, true);
-        wp_register_script('bootstrap-js', GOZAL_DIR_URI . '/assets/js/bootstrap.min.js', ['jquery'], false, true);
+        if (!is_404()) :
+            //register java script
+            wp_register_script('gozal-js', GOZAL_DIR_URI . '/assets/js/main.js', [], filemtime(GOZAL_DIR_PATH . '/assets/js/main.js'), true);
+            // wp_register_script('jquery', GOZAL_DIR_URI . '/assets/js/jquery-3.6.0.min.js', ['jquery'], false, true);
+            wp_register_script('bootstrap-js', GOZAL_DIR_URI . '/assets/js/bootstrap.min.js', ['jquery'], false, true);
 
-        //Enqueue js
-        wp_enqueue_script('gozal-js');
-        wp_enqueue_script('bootstrap-js');
+            //Enqueue js
+            wp_enqueue_script('gozal-js');
+            wp_enqueue_script('bootstrap-js');
         // wp_enqueue_script('jquery');
-        else: 
+        else :
             wp_register_script('404', GOZAL_DIR_URI . '/assets/js/404.js', array('jquery'), filemtime(GOZAL_DIR_PATH . '/assets/js/404.js'), true);
             wp_enqueue_script('404');
         endif;

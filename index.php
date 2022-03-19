@@ -42,6 +42,9 @@ the_post( );
           $format = get_post_format() ?: 'standard';
           if ($format == 'standard') :
            $a++; 
+           if(is_page( )){
+            echo '<h5  > is page</h5>';
+           }
       ?>
 
             <div class="content">
@@ -52,6 +55,7 @@ the_post( );
                       <h2>
                         <a href="<?php echo esc_url(get_permalink()) ?>">
                           <?php
+                          echo '<h5 style="color:#fff;" > index</h5>';
                           the_title();
                           ?>
                         </a>

@@ -78,10 +78,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
       ?>
 
     <a class="navbar-brand" href="#">
-        <?php if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-    ?>
+        <?php if ( function_exists( 'the_custom_logo' ) )the_custom_logo();?>
     </a>
     <form id="search-form" class="my-lg-0" >
       <input  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
