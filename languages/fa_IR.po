@@ -121,3 +121,8 @@ msgstr "درباره ما"
 #: 404.php:181
 msgid "Contact Us"
 msgstr "تماس با ما"
+
+#. /       / / / // / // / Front page
+#: front-page.php:61
+msgid "read more"
+msgstr "ادامه مطلب"

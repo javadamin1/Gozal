@@ -320,6 +320,42 @@ footer {
 }
 
 /*================================== Front page==================== */
+.about {
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0), rgba(250, 250, 250, 0.92)), url(../img/about.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.about .post-a {
+  margin-top: 2rem;
+  padding: 22px 23px 0 46px;
+}
+.about .post-a p {
+  padding: 20px 20px 0 0;
+}
+.about .post-a .btn {
+  margin-top: 2rem;
+}
+.about .post-a .btn img {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.contact {
+  background-image: linear-gradient(to bottom, rgba(13, 120, 253, 0.58), rgba(198, 215, 229, 0.1)), url(../img/sky1.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .unit-a {
   display: flex;
   flex-direction: row;
@@ -483,9 +519,8 @@ footer {
 /* --------------------------  media start   -------------------------- */
 @media (max-width: 767px) {
   .container-lg, .container {
-   
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    width: 100%;
+    padding: 0;
   }
 
   .top {

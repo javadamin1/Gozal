@@ -40,13 +40,6 @@ class Assets
             wp_enqueue_style('404');
 
         elseif (is_front_page()) :
-
-            wp_register_style('lightbox', GOZAL_DIR_URI . '/assets/css/lightbox.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/lightbox.css'), 'all');
-            wp_register_style('owl.carousel.min', GOZAL_DIR_URI . '/assets/css/owl.carousel.min.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/owl.carousel.min.css'), 'all');
-            wp_register_style('owl.theme.default', GOZAL_DIR_URI . '/assets/css/owl.theme.default.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/owl.theme.default.css'), 'all');
-            wp_register_style('style', GOZAL_DIR_URI . '/assets/css/style.css', [], filemtime(GOZAL_DIR_PATH . '/assets/css/style.css'), 'all');
-
-
             wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
             wp_register_style('gozal-css', GOZAL_DIR_URI . '/assets/css/gozal.css', [], false, 'all');
 
@@ -55,9 +48,6 @@ class Assets
 
             //Enqueue css
             // wp_enqueue_style('lightbox');
-            // wp_enqueue_style('owl.carousel.min');
-            // wp_enqueue_style('owl.theme.default');
-            // wp_enqueue_style('style');
             wp_enqueue_style('fontawesome');
             wp_enqueue_style('gozal-css');
             wp_enqueue_style('bootstrap-css');
