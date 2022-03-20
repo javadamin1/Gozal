@@ -42,9 +42,6 @@ the_post( );
           $format = get_post_format() ?: 'standard';
           if ($format == 'standard') :
            $a++; 
-           if(is_page( )){
-            echo '<h5  > is page</h5>';
-           }
       ?>
 
             <div class="content">

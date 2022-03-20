@@ -518,9 +518,10 @@ footer {
 
 /* --------------------------  media start   -------------------------- */
 @media (max-width: 767px) {
-  .container-lg, .container {
+  .container-lg,
+.container {
     width: 100%;
-    padding: 0;
+    padding: 0 !important;
   }
 
   .top {
@@ -582,13 +583,22 @@ footer {
   }
 
   .a-2 {
+    display: inline-flex;
     width: 100% !important;
     height: auto;
-    padding: 8px 16px;
+    padding: 8px 8px;
+  }
+
+  .about {
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0), rgba(250, 250, 250, 0.92)), url(../img/about1.jpg);
+  }
+  .about .post-a {
+    padding: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .container, .container-lg {
+  .container,
+.container-lg {
     width: 100%;
     padding: 0 !important;
   }
