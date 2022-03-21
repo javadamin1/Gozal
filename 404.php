@@ -169,18 +169,17 @@
         <p><?php esc_html_e('Check the URL you entered for any mistakes and try again. Alternatively, search for whatever is missing or take a look around the rest of our site.', 'gozal') ?></p>
 
         <div id="search">
-
-        <form role="search" method="get" class="search-form"  action="<?php echo home_url( '/' ); ?>">
-
-        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+        <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+    <label>
+        <span class="screen-reader-text"><?php echo _e( 'Search for:', 'gozal' ) ?></span>
         <input type="search" class="search-field"
-            placeholder="<?php esc_attr_e('Search', 'gozal') ?>"
-             name="s"
-           />
-  
+            placeholder="<?php echo esc_attr_e( 'Search','placeholder' ,'gozal' ); ?>"
+            value="<?php echo get_search_query() ?>" name="s"
+            title="<?php echo esc_attr_e( 'Search for:', 'gozal' ) ?>" />
+    </label>
     <input type="submit" class="input-search"
-        value="<?php esc_attr_e('Search', 'gozal') ?>" />
-</form>
+        value="<?php echo esc_attr_e( 'Search', 'gozal' ) ?>" />
+
         </div>
 
         <div id="navigation">

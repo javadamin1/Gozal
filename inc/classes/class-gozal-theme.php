@@ -31,12 +31,6 @@ class GOZAL_THEME
          * Action.
          */
         add_action('after_setup_theme', [$this, 'setup_theme']);
-
-        /// ====================== Contact ==============
-        $contact = get_option('active_contact');
-        if (@$contact == 1) {
-            add_action('init', [$this, 'Contact_us']);
-        }
     }
 
 
@@ -113,26 +107,4 @@ class GOZAL_THEME
         add_editor_style();
     }
     //---------------------------------------------------------============ function Contact====================
-
-    public function Contact_us()
-    {
-        $labels = array(
-            'name'           => __('Messages','gozal'),
-            'singular_name'  => 'Message',
-            'menu_name'      => __('Messages','gozal'),
-            'name_admin_bar' => 'Message'
-        );
-
-        $args = array(
-            'labels'           => $labels,
-            'show_ui'          => true,
-            'show_in_menu'     => true,
-            'ccapability_type' => 'post',
-            'hierarchical'     => false,
-            'menu_position'    => 26,
-            'menu_icon'        =>'dashicons-email-alt',
-            'supports'         => array('title', 'editor', 'author')
-        );
-        register_post_type('gozal-contact', $args);
-    }
 }
