@@ -21,7 +21,7 @@ class GOZAL_THEME
         Meta_boxes::get_instance();
         Menus::get_instance();
         Admin::get_instance();
-      Cleanup::get_instance();
+        Cleanup::get_instance();
 
         $this->setup_hooks();
     }
@@ -31,20 +31,27 @@ class GOZAL_THEME
          * Action.
          */
         add_action('after_setup_theme', [$this, 'setup_theme']);
-        add_action('after_setup_theme', [$this,'Po_theme_setup']);
+
+        /// ====================== Contact ==============
+        $contact = get_option('active_contact');
+        if (@$contact == 1) {
+            add_action('init', [$this, 'Contact_us']);
+        }
     }
-    
-/**
- * Load translations for gozal_theme
- */
- public function PO_theme_setup(){
-    load_theme_textdomain('gozal',get_template_directory() . '/languages');
-}
+
+
 
     public function setup_theme()
     {
+        /**
+         * Load translations for gozal_theme
+         */
 
+        load_theme_textdomain('gozal', get_template_directory() . '/languages');
 
+        /**
+         *  active title-tag for gozal_theme
+         */
         add_theme_support('title-tag');
         add_theme_support('custom-logo', [
             'height' => 50,
@@ -85,7 +92,7 @@ class GOZAL_THEME
                 'style',
             ]
         );
-            // add post formats
+        // add post formats
         $options = get_option('post_formats');
         $formats = array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat');
         $output = array();
@@ -104,5 +111,28 @@ class GOZAL_THEME
         if (@$background == 1) add_theme_support('custom-background');
 
         add_editor_style();
+    }
+    //---------------------------------------------------------============ function Contact====================
+
+    public function Contact_us()
+    {
+        $labels = array(
+            'name'           => __('Messages','gozal'),
+            'singular_name'  => 'Message',
+            'menu_name'      => __('Messages','gozal'),
+            'name_admin_bar' => 'Message'
+        );
+
+        $args = array(
+            'labels'           => $labels,
+            'show_ui'          => true,
+            'show_in_menu'     => true,
+            'ccapability_type' => 'post',
+            'hierarchical'     => false,
+            'menu_position'    => 26,
+            'menu_icon'        =>'dashicons-email-alt',
+            'supports'         => array('title', 'editor', 'author')
+        );
+        register_post_type('gozal-contact', $args);
     }
 }

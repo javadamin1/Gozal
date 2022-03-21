@@ -58,6 +58,10 @@ msgid "Custom Navbar"
 msgstr "منو  سفارشی"
 
 #: template-parts/inc/class-admin.php:81
+msgid "Contact Form"
+msgstr "فرم تماس با ما"
+
+#: template-parts/inc/class-admin.php:82
 msgid "google map Url"
 msgstr "آدرس نقشه گوگل"
 
@@ -84,6 +88,9 @@ msgstr "گزینه های تم گوزل"
 #: template-parts/inc/class-admin.php:152
 msgid "Activate Custom menubar"
 msgstr "فعال کردن منو سفارشی"
+
+msgid "Activate contact form"
+msgstr "فعال کردن فرم تماس"
 
 #: template-parts/inc/class-admin.php:162
 msgid "Enter the Google Maps URL"
@@ -122,7 +129,12 @@ msgstr "درباره ما"
 msgid "Contact Us"
 msgstr "تماس با ما"
 
-#. /       / / / // / // / Front page
+#. #. ====================    = == = = = = = = = = = = = = = =Front page  = == = = = = = = = = = == = =  =
 #: front-page.php:61
 msgid "read more"
 msgstr "ادامه مطلب"
+
+#. ====================    = == = = = = = = = = = = = = = Theme Support   = == = = = = = = = = = == = =  ==
+#: template-parts/inc/class-gozal-theme.php:120:122
+msgid "Messages"
+msgstr "پیام ها"

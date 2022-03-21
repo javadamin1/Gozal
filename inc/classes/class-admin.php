@@ -86,6 +86,7 @@ class Admin
         register_setting('gozal-theme-options', 'custom_header');
         register_setting('gozal-theme-options', 'custom_backgruand');
         register_setting('gozal-theme-options', 'custom_navbar');
+        register_setting('gozal-theme-options', 'active_contact');
         register_setting('gozal-theme-options', 'addres_google_map');
 
         add_settings_section('gozal-theme-section', 'Theme option', [$this, 'gozal_theme_sections_callback'], 'gozal-theme-options');
@@ -93,6 +94,7 @@ class Admin
         add_settings_field('custom-header', 'Custom Header', [$this, 'gozal_theme_custom_header'], 'gozal-theme-options', 'gozal-theme-section');
         add_settings_field('custom-backgruand', 'Custom background', [$this, 'gozal_theme_custom_background'], 'gozal-theme-options', 'gozal-theme-section');
         add_settings_field('custom-navbar', __('Custom Navbar', 'gozal'), [$this, 'gozal_theme_custom_navbar'], 'gozal-theme-options', 'gozal-theme-section');
+        add_settings_field('custom-contact', __('Contact Form', 'gozal'), [$this, 'gozal_theme_custom_contact'], 'gozal-theme-options', 'gozal-theme-section');
         add_settings_field('addres-google', __('google map Url', 'gozal'), [$this, 'gozal_theme_addres_google'], 'gozal-theme-options', 'gozal-theme-section');
 
         // Custom CSS Options
@@ -100,9 +102,6 @@ class Admin
         add_settings_section('gozal-custom-css-section', 'Custom CSS', [$this, 'gozal_custom_sections_callback'], 'gozal-submenu-slug');
         add_settings_field('custom-css', 'Insert your custom css', [$this, 'gozal_custom_css_callback'], 'gozal-submenu-slug', 'gozal-custom-css-section');
     }
-
-
-
 
 
 
@@ -198,6 +197,16 @@ class Admin
         $output = '';
         $cheched = (@$options == 1 ? 'checked' : '');
         $output .= '<label> <input type="checkbox"  name="custom_navbar" id="custom-navbar"value="1" ' . $cheched . ' >' . _e('Activate Custom menubar', 'gozal') . ' 
+            <label>';
+        echo $output;
+    }
+
+    public function gozal_theme_custom_contact()
+    {
+        $options = get_option('active_contact');
+        $output = '';
+        $cheched = (@$options == 1 ? 'checked' : '');
+        $output .= '<label> <input type="checkbox"  name="active_contact" id="custom-contact" value="1" ' . $cheched . ' >' . _e('Activate contact form', 'gozal') . ' 
             <label>';
         echo $output;
     }
