@@ -5,7 +5,25 @@
  *
  * @package Gozal
  */
-
+	//	echo '<div style="background-color:#d54415;margin-top:20px">'.$value.'</div>';
+    // echo '<pre>';
+    // var_dump($value);
+    // wp_die();
+// if (isset($_GET['update'])) {
+//     echo' <div style="height:100px;margin-top:25px" >work</div>';
+//     echo get_template_directory(  ).'../../jav.txt' ; $file = file(GOZAL_DIR_URI."/jav.txt");
+   
+//     $open = fopen( $file, "w+");
+//     $text = $_POST['update'];
+//     fwrite($open, $text);
+//     fclose($open);
+//     echo "File updated.<br />";
+//     echo "File:<br />";
+//     $file = file("jav.txt");
+//     foreach ($file as $text) {
+//       echo $text . "<br />";
+//     }
+// }
    function gozal_admin_pages()
     {
 ?>
@@ -13,7 +31,9 @@
        
         <?php
         settings_errors();
+       
         ?>
+       
         <form method="POST" id="save-custom-css-form" action="options.php" class="gozal-general-form">
             <?php
             settings_fields('general-gozal-theme');
@@ -35,19 +55,25 @@
 
         <?php
         settings_errors();
+        // if(isset($_POST['javad'])){
+        //     $value=$_POST['javad'];
+        //     echo '<div style="background-color:#d54415;margin-top:20px">'.$value.'</div>';
+        // }else{
+        //     echo '<div style="background-color:#d54415;margin-top:20px">no</div>';
+        // }
+      
         ?>
+
         <form method="POST" id="save-custom-css-form" action="options.php" class="gozal-general-form">
             <?php
             settings_fields('gozal-custom-css-options');
-            ?>
-            <?php
             do_settings_sections('gozal-submenu-slug');
-            ?>
-            <?php
             submit_button();
+  
             ?>
         </form>
-    <?php
+          <?php
+      
     } /// gozal setting css
 
  

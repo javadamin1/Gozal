@@ -169,11 +169,11 @@
         <p><?php esc_html_e('Check the URL you entered for any mistakes and try again. Alternatively, search for whatever is missing or take a look around the rest of our site.', 'gozal') ?></p>
 
         <div id="search">
-        <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+        <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ) ; ?>">
     <label>
         <span class="screen-reader-text"><?php echo _e( 'Search for:', 'gozal' ) ?></span>
         <input type="search" class="search-field"
-            placeholder="<?php echo esc_attr_e( 'Search','placeholder' ,'gozal' ); ?>"
+            placeholder="<?php echo esc_attr_e( 'Search','gozal' ); ?>"
             value="<?php echo get_search_query() ?>" name="s"
             title="<?php echo esc_attr_e( 'Search for:', 'gozal' ) ?>" />
     </label>

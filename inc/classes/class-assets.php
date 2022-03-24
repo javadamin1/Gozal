@@ -30,7 +30,7 @@ class Assets
         add_action('wp_enqueue_scripts', [$this, 'register_scripts']);
         add_action('admin_enqueue_scripts', [$this, 'register_admin_style']);
     }
-    public function register_style($hook)
+    public function register_style()
     {
 
         if (is_404()) :
@@ -89,10 +89,11 @@ class Assets
             wp_enqueue_script('404');
         endif;
     }
+  
     public function register_admin_style($hook)
     {
-        //echo $hook;
-        if ('gozal-setting_page_gozal-submenu-slug' == $hook) {
+        $src=strpos($hook,'gozal-submenu-slug');
+    if ($src>=50) {
             wp_enqueue_style('ace', GOZAL_DIR_URI . '/assets/css/ace.css', array(), '1.0.0', 'all');
             wp_enqueue_script('ace', GOZAL_DIR_URI . '/assets/js/ace/ace.js', array('jquery'), '1.2.1', true);
             wp_enqueue_script('gozal-custom-css-script', GOZAL_DIR_URI . '/assets/js/gozal-custom-css.js', array('jquery'), '1.0.0', true);

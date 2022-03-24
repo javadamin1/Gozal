@@ -50,8 +50,8 @@ msgid "Telegram ID"
 msgstr "آیدی تلگرام"
 
 #: template-parts/inc/class-admin.php:80,154
-msgid "Whats App Number"
-msgstr "شماره تلفن واتساپ"
+msgid "+1 411111111"
+msgstr "989140000000"
 
 #: template-parts/inc/class-admin.php:80
 msgid "Custom Navbar"

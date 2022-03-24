@@ -1,8 +1,27 @@
-jQuery(document).ready(function ($) {
-    var updateCss = function () { $("#gozal-text-css").val(editor.getSession().getValue());}
-    $("#save-custom-css-form").submit(updateCss);
-})
+//jQuery(document).ready(function ($) {
 
+  
+//   function javad (){
+//            
+//        
+//         });
+ 
+//});
+// jQuery(document).ready(function ($) {
+     
+//     $("#ra").click(function(){
+//         //$("#div1").html(result);
+//        // $("#div1").load("'.GOZAL_DIR_URI.'jav.txt");
+//              $.ajax({url: "'.GOZAL_DIR_URI.'/jav.txt", success: function(result){
+//                 console.log(result);
+//         }});
+ 
+//            });    
+//         });
 var editor = ace.edit("customCss");
 editor.setTheme("ace/theme/dracula");
 editor.getSession().setMode("ace/mode/css");
+// $.post('/form.php', serializedData, function(response) {
+//     // Log the response to the console
+//     console.log("Response: "+response);
+// });

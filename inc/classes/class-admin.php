@@ -150,7 +150,7 @@ class Admin
     {
         $options = get_option('whatsapp');
         $output = '';
-        $output .= '<label> <input type="number"   name="whatsapp" id="whatsapp" value="' . $options . '" placeholder="' . __('Whats App Number', 'gozal') . '" > 
+        $output .= '<label> <input type="number"   name="whatsapp" id="whatsapp" value="' . $options . '" placeholder="' . esc_attr__('+1 411111111', 'gozal') . '" > 
             ' . _e('Enter the number with the country code', 'gozal') . ' <label>';
         echo $output;
     }
@@ -227,9 +227,82 @@ class Admin
     }
     public function gozal_custom_css_callback()
     {
-        $css = get_option('gozal_css');
-        $css = (empty($css) ? '/* Gozal Theme Custom CSS */' : $css);
-        echo '<div id="customCss" >' . $css . ' </div><textarea name="gozal_css" id="gozal-text-css" style="display: none;visibility: hidden" >' . $css . '</textarea>';
+       // $file = file(GOZAL_DIR_URI."/style.css");
+        $myfile = fopen(GOZAL_DIR_PATH."/style.css", "r");
+        $css= fread($myfile,filesize(GOZAL_DIR_PATH."/style.css"));
+        fclose($myfile);
+         echo '<div id="customCss" >'.$css.' </div><textarea name="gozal_css" id="gozal-text-css" style="display: none;visibility: hidden" >' .$css. '</textarea>';
+       
+ echo '<script> 
+
+ jQuery(document).ready(function ($) {
+    var updateCss = function () { $("#gozal-text-css").val(editor.getSession().getValue());
+    }
+        $("#save-custom-css-form").submit(updateCss);
+
+     var request;
+     $("#save-custom-css-form").submit(function(event){
+        // Prevent default posting of form - put here to work in case of errors
+        event.preventDefault();
+    
+        // Abort any pending request
+        if (request) {
+            request.abort();
+        }
+        // setup some local variables
+        var $form = $(this);
+    
+  
+        var $inputs = $form.find("input, select, button, textarea");
+    
+        // Serialize the data in the form
+        var serializedData = $form.serialize();
+    
+      
+        // Note: we disable elements AFTER the form data has been serialized.
+        // Disabled form elements will not be serialized.
+        $inputs.prop("disabled", true);
+    
+        // Fire off the request to /form.php
+        request = $.ajax({
+            url: "'.GOZAL_DIR_URI.'/ajax.php",
+            type: "post",
+            data: serializedData
+        });
+    
+        // Callback handler that will be called on success
+        request.done(function (response, textStatus, jqXHR){
+            // Log a message to the console
+            var result= $.parseJSON(response); 
+            if(result){
+                alert("Save All Change");
+                location.reload();
+            }else{
+                alert("Can\'t Save");
+                location.reload();
+            }
+           // console.log(); //location.reload();
+        });
+    
+        // Callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+    
+        // Callback handler that will be called regardless
+        // if the request failed or succeeded
+        request.always(function () {
+            // Reenable the inputs
+            $inputs.prop("disabled", false);
+        });
+    
+    });
+        });</script> ';
+  
     }
     public function gozal_custom_css($input)
     {

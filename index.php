@@ -8,27 +8,6 @@
 <div id="page-height">
   <div id="footer-height">
     <div class="container-lg">
-      <!-- <div class="unit-a">
-            <div class="a-1">
-                <h2>
-                    درباره اتاقسازی یادگاری زرنق
-                </h2>
-                پخش و فروش عمده و خرده اتاق جلو و عقب نیسان زامیاد و قطعات بدنه نیسان زامیاد به قیمت مناسب به مصوبه نرخ کارخانه
-                <br><br>
-                <a href="./about-us.html">
-                    ادامه مطلب
-                </a>
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <!--a1 
-            <div class="a-2">
-                <img src="<?php //echo GOZAL_DIR_URI . '/assets/img'; 
-                          ?>/car3.jpg" alt="">
-            </div>
-            <!--a2 
-        </div> -->
-
-      <!--unit-a -->
       <?php
 
       get_header();
@@ -52,7 +31,6 @@ the_post( );
                       <h2>
                         <a href="<?php echo esc_url(get_permalink()) ?>">
                           <?php
-                          echo '<h5 style="color:#fff;" > index</h5>';
                           the_title();
                           ?>
                         </a>

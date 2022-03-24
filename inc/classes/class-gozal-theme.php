@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Bootstrap the Theme
+ * Theme Support file.
  * @package Gozal
  */
 
@@ -46,7 +46,8 @@ class GOZAL_THEME
         /**
          *  active title-tag for gozal_theme
          */
-        add_theme_support('title-tag');
+  
+        add_theme_support( "title-tag" );
         add_theme_support('custom-logo', [
             'height' => 50,
             'width' => 100,
