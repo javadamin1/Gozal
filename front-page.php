@@ -15,6 +15,7 @@
 get_header();
 ?>
 <!-- ------------------------------------------------Include About Page --------------------------->
+<section >
     <?php
 
 
@@ -142,7 +143,7 @@ if ( ! is_null( $found_post ) ){
    ?>    
 
 
-
+</section>
 
     </div>
     <!--container -->
