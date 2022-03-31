@@ -6,13 +6,13 @@
  */
 get_header();
 ?>
-<div id="premary" class="content-area">
-   <main id="main" class="site-main" role="main">
-      <div class="container">
+<div id="page-height">
+<div id="footer-height">
+
          <?php
          if (have_posts()):
             while (have_posts()) : the_post();
-               get_template_part('template-parts/single', get_post_format());
+               get_template_part('template-parts/single');
             //    the_post_navigation( array(
             //       'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'gozal' ) . '</span> ' .
             //           '<span class="screen-reader-text">' . __( 'Next post:', 'gozal' ) . '</span> ' .
@@ -26,8 +26,11 @@ get_header();
                endif;
             endwhile;
          endif;
-
          ?>
-      </div>
-   </main>
 </div>
+  <!--footer-height -->
+  <?php
+  get_footer();
+  ?>
+</div>
+<!--page-height -->

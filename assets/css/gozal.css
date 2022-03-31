@@ -1,3 +1,97 @@
+.single-area {
+  padding-top: 70px;
+  padding-bottom: 130px;
+}
+.single-area .all {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+.single-area .all .image {
+  border-radius: 0.25rem;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+.single-area .all .image img {
+  object-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.single-area .all .title {
+  font-size: 2.25rem;
+  color: #090e34;
+  padding-right: 1.25rem;
+}
+.single-area .all .profile {
+  padding-bottom: 1rem;
+  border-color: #e9ecf8;
+  border-bottom-width: 1px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  margin-bottom: 2.5rem;
+}
+.single-area .all .profile .profile-1 {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+.single-area .all .profile .profile-1 p {
+  color: #959cb1;
+  margin-left: 1.25rem;
+  font-weight: 500;
+}
+.single-area .all .profile .profile-1 p:first-child {
+  margin-right: 1.25rem;
+}
+.single-area .all .content p {
+  line-height: 1.625;
+  color: #959cb1;
+  font-weight: 500;
+}
+.single-area .all .content p strong {
+  color: #4a6cf7;
+  font-weight: bolder;
+}
+
+/* --------------------------  media start   -------------------------- */
+@media (max-width: 768px) {
+  .single-area {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .single-area .all .title {
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  .single-area .all .profile {
+    margin-bottom: 0.25rem;
+  }
+  .single-area .all .content {
+    padding-right: 1.5rem !important;
+  }
+  .single-area .all .content p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+}
+@media (min-width: 960px) {
+  .all .content p {
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+}
+@media (min-width: 1200px) {
+  .single-area .all .title {
+    font-size: 2rem;
+  }
+}
 @font-face {
   font-family: pixelboy-BNazanin;
   src: url("../fonts/pixelboy-BNazanin.eot");
@@ -10,6 +104,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.blur {
+  filter: blur(3px);
 }
 
 #page-height {
@@ -117,6 +215,7 @@ body {
 .pre-top {
   width: 100%;
   background-color: #353232;
+  padding: 10px;
 }
 
 .top {
@@ -155,7 +254,7 @@ body {
 .menu li {
   position: relative;
   display: inline-block;
-  padding: 5px 12px;
+  padding: 8px 12px;
   color: #df9d47;
   cursor: pointer;
 }
@@ -470,7 +569,6 @@ footer {
 
 .a-2a {
   padding: 12px 19px 24px 48px;
-  background: #0ab418 center center cover;
 }
 .a-2a img {
   box-shadow: #1045bb 2px 4px 16px 1px;
@@ -537,13 +635,13 @@ footer {
     background-color: #2b2a2a;
     top: 64px;
     right: -100%;
-    width: 225px;
+    width: 280px;
     padding: 10px 4px;
     transition: all 0.3s;
-    opacity: 0.85;
     background: linear-gradient(-90deg, #000, rgba(10, 10, 10, 0.85), transparent);
-    border-bottom: solid 1px white;
+    border-bottom: solid 2px #99c00f;
     min-height: 20vh;
+    z-index: 1000;
   }
 
   .menu li {

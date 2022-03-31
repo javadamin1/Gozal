@@ -13,7 +13,13 @@
 get_header();
 
 ?>
+<div style="background-color:#fff;color:#222">
+<?php
+the_content();
 
+?>
+
+</div>
 
    
   </div>

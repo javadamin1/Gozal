@@ -1,0 +1,119 @@
+.single-area {
+    padding-top: 70px;
+    padding-bottom: 130px;
+    .all {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-left: -16px;
+        margin-right: -16px;
+        .image {
+            border-radius: 0.25rem;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 2.5rem;
+            img {
+                object-position: center;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+        .title {
+            font-size: 2.25rem;
+            color: rgb(9, 14, 52);
+            padding-right: 1.25rem;
+        }
+        .profile {
+            padding-bottom: 1rem;
+            border-color: #e9ecf8;
+            border-bottom-width: 1px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            display: flex;
+            margin-bottom: 2.5rem;
+            .profile-1 {
+                align-items: center;
+                flex-wrap: wrap;
+                display: flex;
+                p {
+                    color: #959cb1;
+                    margin-left: 1.25rem;
+                    font-weight: 500;
+                    &:first-child {
+                        margin-right: 1.25rem;
+                    }
+                }
+            }
+        }
+        .content{
+            p{
+                line-height: 1.625;
+                color: rgb(149,156,177);
+                font-weight: 500;
+                strong{
+                    color:rgb(74,108,247);
+                    font-weight: bolder;
+                }
+                
+            }
+        }
+    }
+}
+
+/* --------------------------  media start   -------------------------- */
+
+@media (max-width: 768px) {
+    .single-area{
+        padding-top: 30px;
+        padding-bottom: 50px;
+        .all {
+        .title {
+            line-height: 1.25;
+            font-weight: 700;
+        }
+        .profile{
+            margin-bottom: 0.25rem;
+        }
+        .content{
+            padding-right: 1.5rem !important;
+            p{
+                font-size: 1.125rem;
+                line-height: 1.7;
+            }
+        }
+    } 
+    }
+   
+}
+
+@media (min-width: 960px) {
+    .all {
+        .content{
+            p{
+                font-size: 1rem;
+                line-height: 1.625;
+            }
+        }
+    }   
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 1200px) {
+    .single-area {
+        .all {
+            .title {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+}
+
+@media (min-width: 1612px) {
+}

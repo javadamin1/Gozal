@@ -1,19 +1,52 @@
 <?php
 
 /**
- * Main template file.
+ * single template file.
  * @package Gozal
  */
 
 ?>
+
 <title><?php single_post_title();?></title>
+<section class="single-area">
+      <div class="container-sm">
+          <div class="all">
+            <div class="col-md-9">
+              <div>
+                <div class="image container-md">
+                  <?php if(has_post_thumbnail()): ?>
+                  <img src="<?php echo gozal_image_url(); ?>">
+                  <?php endif; ?>
+                </div>
+                <h2 class="title mb-3">
+               <?php single_post_title(); ?>
+                </h2>
+                <div class="profile">
+                  <div class="profile-1">
+                    <div class="d-flex align-items-center mb-3 ">
+                      <p>
+                      <i class="fas fa-calendar-alt"></i>
 
-<div class="container">
-
-<h5><?php single_post_title();?></h5>
-<?php gozal_image_url() ;the_content() ?>
-
-<div class="shownum">
+                        12 Jan 2024
+                      </p>
+                      <p>
+                      <i class="fas fa-comment-alt"></i>
+                        50
+                      </p>
+                      <p>
+                      <i class="fas fa-check-double"></i>
+                        35
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="content p-3">
+                <?php the_content(); ?>
+                </div>
+              </div>
+            </div>
+          </div>
+   <div class="shownum">
 <?php
       $args = array (
           'before'            => ' <ul class="pagination">',
@@ -24,5 +57,11 @@
       wp_link_pages( $args );
       ?>
 </div><!--shownum -->
-</div><!--container -->
+      </div>
+      <!-- container -->
+    </section>
+
+
+
+
 

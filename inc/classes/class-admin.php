@@ -228,8 +228,8 @@ class Admin
     public function gozal_custom_css_callback()
     {
        // $file = file(GOZAL_DIR_URI."/style.css");
-        $myfile = fopen(GOZAL_DIR_PATH."/style.css", "r");
-        $css= fread($myfile,filesize(GOZAL_DIR_PATH."/style.css"));
+        $myfile = fopen(GOZAL_DIR_PATH."/assets/css/user.css", "r");
+        $css= fread($myfile,filesize(GOZAL_DIR_PATH."/assets/css/user.css"));
         fclose($myfile);
          echo '<div id="customCss" >'.$css.' </div><textarea name="gozal_css" id="gozal-text-css" style="display: none;visibility: hidden" >' .$css. '</textarea>';
        

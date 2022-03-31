@@ -1,6 +1,6 @@
 // add archive
 @use "./archive/front";
-
+@use "./archive/single";
 $font-stack: pixelboy-BNazanin, sans-serif;
 $primary-color: #333;
 $header-text-shodow: rgba(0, 0, 0, 0.4);
@@ -40,6 +40,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.blur{
+  filter: blur(3px);
 }
 #page-height {
   position: relative;
@@ -138,6 +141,7 @@ body {
 .pre-top {
   width: 100%;
   background-color: $nav1-back;
+  padding: 10px;
 }
 
 .top {
@@ -175,7 +179,7 @@ body {
   li {
     position: relative;
     display: inline-block;
-    padding: 5px 12px;
+    padding: 8px 12px;
     color: rgb(223, 157, 71);
     cursor: pointer;
 
@@ -549,16 +553,16 @@ footer {
   }
   .menu {
     position: absolute;
-    background-color: rgb(43, 42, 42);
+    background-color: #2b2a2a;
     top: 64px;
     right: -100%;
-    width: 225px;
+    width: 280px;
     padding: 10px 4px;
     transition: all 0.3s;
-    opacity: 0.85;
     background: linear-gradient(-90deg, #000, rgba(10, 10, 10, 0.85), transparent);
-    border-bottom: solid 1px white;
+    border-bottom: solid 2px #99c00f;
     min-height: 20vh;
+    z-index: 1000;
   }
   .menu li {
     display: block;

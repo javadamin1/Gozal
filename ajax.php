@@ -1,6 +1,6 @@
 <?php
 $text = isset($_POST['gozal_css']) ? $_POST['gozal_css'] : null;
-$fil ="./style.css";
+$fil ="./assets/css/user.css";
 $open = fopen( $fil, "w+");
    // $text =' yes worked';
    if( fwrite($open, $text)){

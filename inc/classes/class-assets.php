@@ -40,15 +40,16 @@ class Assets
             wp_enqueue_style('404');
 
         elseif (is_front_page()) :
-            wp_register_style('orginal-css', get_stylesheet_uri(), ['bootstrap-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
-            wp_register_style('gozal-css', GOZAL_DIR_URI . '/assets/css/gozal.css', [], false, 'all');
+            wp_register_style('orginal-css', get_stylesheet_uri(), ['user-css'], filemtime(GOZAL_DIR_PATH . '/style.css'));
+            wp_register_style('gozal-css', GOZAL_DIR_URI . '/assets/css/gozal.css', ['bootstrap-css'], false, 'all');
+            wp_register_style('user-css', GOZAL_DIR_URI . '/assets/css/user.css', ['gozal-css'], false, 'all');
 
             wp_register_style('bootstrap-css', GOZAL_DIR_URI . '/assets/css/bootstrap.css', [], false, 'all');
             wp_register_style('fontawesome', GOZAL_DIR_URI . '/assets/css/all.css', [], false, 'all');
-
             //Enqueue css
             // wp_enqueue_style('lightbox');
             wp_enqueue_style('fontawesome');
+            wp_enqueue_style('user-css');
             wp_enqueue_style('gozal-css');
             wp_enqueue_style('bootstrap-css');
             wp_enqueue_style('orginal-css');
