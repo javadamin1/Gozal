@@ -98,9 +98,9 @@ class Admin
         add_settings_field('addres-google', __('google map Url', 'gozal'), [$this, 'gozal_theme_addres_google'], 'gozal-theme-options', 'gozal-theme-section');
 
         // Custom CSS Options
-        register_setting('gozal-custom-css-options', 'gozal_css', [$this, 'gozal_custom_css']);
+       // register_setting('gozal-custom-css-options', 'gozal_css', [$this, 'gozal_custom_css']);
         add_settings_section('gozal-custom-css-section', 'Custom CSS', [$this, 'gozal_custom_sections_callback'], 'gozal-submenu-slug');
-        add_settings_field('custom-css', 'Insert your custom css', [$this, 'gozal_custom_css_callback'], 'gozal-submenu-slug', 'gozal-custom-css-section');
+       add_settings_field('custom-css', 'Insert your custom css', [$this, 'gozal_custom_css_callback'], 'gozal-submenu-slug', 'gozal-custom-css-section');
     }
 
 

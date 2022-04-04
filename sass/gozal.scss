@@ -520,7 +520,6 @@ footer {
     }
     a {
       font-size: 16px;
-
       text-align: center;
       color: #4d3252;
       height: 35px;
@@ -535,6 +534,22 @@ footer {
       width: 45px;
     }
   }
+}
+/*================================== blog ======================================== */
+.card{
+  width: 100%;
+  height: 100%;
+a{
+  margin-bottom: 0.75rem;
+  margin-right: 1rem;
+}
+}
+
+.load-more{
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
 /* --------------------------  media start   -------------------------- */

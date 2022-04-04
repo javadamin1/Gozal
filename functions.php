@@ -13,6 +13,7 @@ if (!defined('GOZAL_DIR_PATH')) {
 
 require_once GOZAL_DIR_PATH . '/inc/help/autoloader.php';
 require_once GOZAL_DIR_PATH . '/inc/help/template-tags.php';
+require_once GOZAL_DIR_PATH . '/inc/help/ajax.php';
 require_once GOZAL_DIR_PATH . '/inc/pages/admin-pages.php';
 
 if (!defined('GOZAL_DIR_URI')) {

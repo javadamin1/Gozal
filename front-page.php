@@ -17,8 +17,7 @@ get_header();
 <!-- ------------------------------------------------Include About Page --------------------------->
 <section >
     <?php
-
-
+$found_post=null;
  if ( $posts = get_posts( array( 
     'name' => 'about-us', 
     'post_type' => 'page',
@@ -59,7 +58,8 @@ get_header();
 $args=array(
     'post_type' => 'post',
     'category_name' => 'home',
-    'post_per_page' => 3
+    'post_per_page' => 3,
+    'post_status' => 'publish',
 );
 $_posts = new WP_Query( $args );
 
@@ -89,7 +89,7 @@ $a++;
                       </h2>
                       <p>
                         <?php
-                        the_excerpt();
+                       echo gozal_the_excerpt(20);
 
                         ?>
                       </p>

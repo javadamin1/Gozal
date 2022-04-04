@@ -25,10 +25,15 @@
 </head>
 
 <body <?php body_class();if(is_single())echo 'style="background: #fff;"'; ?>>
+
     <?php
     if (function_exists('wp_body_open')) {
         wp_body_open();
     }
+?>
+<div id="page-height">
+    <div class="container-lg">
+<?php
     if (get_option('custom_navbar')) {
 
         get_template_part('./template-parts/header/nav1');
@@ -74,3 +79,5 @@
     <?php
     }
     ?>
+     </div>
+<!-- .container-lg -->

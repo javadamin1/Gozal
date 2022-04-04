@@ -4,74 +4,56 @@
  * Main template file.
  * @package Gozal
  */
+get_header();
 ?>
-<div id="page-height">
-  <div id="footer-height">
-    <div class="container-lg">
+
+<div id="footer-height">
+  <div class="container-lg pb-5">
+    <div class="row">
       <?php
-
-      get_header();
-$a=0;
-
       if (have_posts()) : while (have_posts()) :
-the_post( );
-
-          $image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
-          $format = get_post_format(get_the_ID());
-          $format = get_post_format() ?: 'standard';
-          if ($format == 'standard') :
-           $a++; 
+          the_post();
+         if(has_post_thumbnail()): 
       ?>
+      
+          <div class="col-md-4 mt-4">
+            <div class="card">
+              <img class="card-img-top" src="<?php echo gozal_image_url();  ?>" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"> <?php the_title(); ?></h5>
+                <div class="card-text"><?php echo gozal_the_excerpt(20); ?></div>
 
-            <div class="content">
-              <div class="unit-b <?php echo ($a % 2) ? '' : 'unit-c'; ?>">
-                <div class="b-1">
-                  <div class="b-1-a">
-                    <div class="b-inner">
-                      <h2>
-                        <a href="<?php echo esc_url(get_permalink()) ?>">
-                          <?php
-                          the_title();
-                          ?>
-                        </a>
-                      </h2>
-                      <p>
-                        <?php
-                        the_excerpt();
-
-                        ?>
-                      </p>
-                      <!-- <a class="btn btn-success" href="<?php //echo permalink_link() ?>"></a> -->
-                    </div>
-                  </div>
-                </div>
-                <!--b-1 -->
-                <div class="b-2">
-                  <img src=" <?php echo $image ?>" alt="">
-                </div>
-                <!--b-2 -->
               </div>
-              <!--unit-b -->
+              <div class="btn-card">
+                <a href="<?php echo get_permalink(); ?>" class="btn btn-primary">ادامه مطلب</a>
+              </div>
             </div>
-            <!--contect-->
-      <?php
-          else :
+          </div>
 
-            get_template_part('/template-parts/content', get_post_format());
-          endif;
+        <?php
+endif;
         endwhile;
+        ?>
+        
+    </div>
+    <!-- row       -->
+    <div class="load-more" >
+      <button class="btn btn-primary load-more-btn"  > load more </button>
+  </div>
+   
+  <?php
       else :
         get_template_part('/template-parts/content-none');
       endif;
-      ?>
-    </div>
-    <!--container -->
-  </div>
-  <!--footer-height -->
-  <?php
-  get_footer();
   ?>
+  </div>
+  <!--container -->
 </div>
+<!--footer-height -->
+<?php
+get_footer();
+?>
+
 <!--page-height -->
 <!-- <main id="main" class="site-main mt-5" role="main" >
       <?php

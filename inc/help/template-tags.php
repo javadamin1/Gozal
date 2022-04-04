@@ -58,17 +58,22 @@ function gozal_posted_by()
     );
     echo '<span class="byline text-secondary">' . $byline . ' </span>';
 }
-function gozal_the_excerpt($trim_character_count = 0)
-{
-    if (!has_excerpt() || 0 === $trim_character_count) {
-        the_excerpt();
-        return;
-    }
-    $excerpt = wp_strip_all_tags(get_the_excerpt());
-    $excerpt = substr($excerpt, 0, $trim_character_count);
-    $excerpt = substr($excerpt, 0, strrpos($excerpt, ''));
 
-    echo $excerpt . '[...]';
+function gozal_the_excerpt($limit = 0)
+{
+
+    if (has_excerpt() || 0 === $limit) {
+        $excerpt = explode(' ', get_the_excerpt(), $limit);
+        if (count($excerpt) >= $limit) {
+            array_pop($excerpt);
+            $excerpt = implode(" ", $excerpt) . ' ... ';
+        } else {
+            $excerpt = implode(" ", $excerpt) . ' ... ';
+        }
+        $excerpt = preg_replace('`[[^]]*]`', '', $excerpt);
+        return $excerpt;
+    }
+return;
 }
 
 function gozal_image_url($num = 1)
@@ -93,12 +98,13 @@ function gozal_image_url($num = 1)
     endif;
     return $output;
 }
-function check_page($url){
-    if(is_home() && 'wordpress'===basename($url)):
+function check_page($url)
+{
+    if (is_home() && 'wordpress' === basename($url)) :
         return 1;
-    else:
-       if(basename(get_permalink())===basename($url)):
-    return 1;
-       endif;
+    else :
+        if (basename(get_permalink()) === basename($url)) :
+            return 1;
+        endif;
     endif;
 }
