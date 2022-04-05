@@ -19,7 +19,6 @@ jQuery(function ($) {
     var page = that.data("page");
     var newpage = page+1;
     var ajax_url = that.data("url");
-console.
     $.ajax({
       url: ajax_url,
       type : 'post',
@@ -31,10 +30,9 @@ console.
         console.log('de'+response);
       },
       success: function (response) {
-        
         console.log('su'+response);
         $(".load").append(response);
-that.data('page',newpage);
+        that.data('page',newpage);
       },
     });
   });

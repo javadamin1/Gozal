@@ -9,7 +9,7 @@ get_header();
 
 <div id="footer-height">
   <div class="container-lg pb-5">
-    <div class="row">
+    <div class="row load">
       <?php
       if (have_posts()) : while (have_posts()) :
           the_post();
@@ -38,7 +38,7 @@ endif;
     </div>
     <!-- row       -->
     <div class="load-more" >
-      <button class="btn btn-primary load-more-btn"  > load more </button>
+      <button class="btn btn-primary load-more-btn" data-page="1" data-url="<?php echo admin_url('admin-ajax.php');  ?>"  > load more </button>
   </div>
    
   <?php
