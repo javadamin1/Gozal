@@ -15,24 +15,28 @@ jQuery(function ($) {
   //ajax load more post botton
   $(".load-more-btn").on("click", function () {
 
+    var ajax_url = siteConfig?.ajaxUrl ?? '';
+   var  ajaxNonce = siteConfig?.ajax_nonce ?? '';
     var that = $(this);
     var page = that.data("page");
     var newpage = page+1;
-    var ajax_url = that.data("url");
+
     $.ajax({
       url: ajax_url,
       type : 'post',
       data: {
         page: page,
-        action: "gozal_load_more",
+        action: 'load_more',
+        ajax_nonce: ajaxNonce,
       },
       error: function (response) {
         console.log('de'+response);
       },
       success: function (response) {
         console.log('su'+response);
-        $(".load").append(response);
         that.data('page',newpage);
+        $(".load").append(response);
+        
       },
     });
   });

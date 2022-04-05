@@ -3,44 +3,31 @@
 /**
  * Main template file.
  * @package Gozal
- */
+ */ 
+
 get_header();
 ?>
 
 <div id="footer-height">
   <div class="container-lg pb-5">
-    <div class="row load">
+    <div class="row load ">
       <?php
       if (have_posts()) : while (have_posts()) :
           the_post();
-         if(has_post_thumbnail()): 
-      ?>
-      
-          <div class="col-md-4 mt-4">
-            <div class="card">
-              <img class="card-img-top" src="<?php echo gozal_image_url();  ?>" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title"> <?php the_title(); ?></h5>
-                <div class="card-text"><?php echo gozal_the_excerpt(20); ?></div>
-
-              </div>
-              <div class="btn-card">
-                <a href="<?php echo get_permalink(); ?>" class="btn btn-primary">ادامه مطلب</a>
-              </div>
-            </div>
-          </div>
-
-        <?php
-endif;
+          // get_template_part('/template-parts/components/post-card.php');
+          if (has_post_thumbnail()) :
+            get_template_part('/template-parts/content');
+          endif;
         endwhile;
-        ?>
-        
+      ?>
+
     </div>
     <!-- row       -->
-    <div class="load-more" >
-      <button class="btn btn-primary load-more-btn" data-page="1" data-url="<?php echo admin_url('admin-ajax.php');  ?>"  > load more </button>
-  </div>
-   
+ 
+    <div class="load-more mt-3 ">
+      <button class="btn btn-primary load-more-btn" data-page="1" data-url="<?php echo admin_url('admin-ajax.php');  ?>"> load more </button>
+    </div>
+
   <?php
       else :
         get_template_part('/template-parts/content-none');

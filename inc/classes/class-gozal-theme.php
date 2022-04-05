@@ -22,7 +22,6 @@ class GOZAL_THEME
         Menus::get_instance();
         Admin::get_instance();
         Cleanup::get_instance();
-
         $this->setup_hooks();
     }
     protected function setup_hooks()

@@ -618,10 +618,15 @@ footer {
 .card {
   width: 100%;
   height: 100%;
+  max-height: 24rem;
+  overflow: hidden;
 }
 .card a {
   margin-bottom: 0.75rem;
   margin-right: 1rem;
+}
+.card img {
+  max-height: 60%;
 }
 
 .load-more {
