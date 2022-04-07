@@ -80,46 +80,44 @@ function  gozal_theme_learn_settings()
 
     <div class="container">
 
+        <?php
 
-        <div class="main-video">
-            <div class="video">
-                <video src="https://otaghsaziyadegari.ir/video/wordpress%2002.mp4" controls ></video>
-                <h3 class="title">01. video title goes here</h3>
-                <h4>Description :</h4>
-                <p class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro nam</p>
+        if (get_option('xml_url')  != null) :
+            $xml = simplexml_load_file(get_option('xml_url'));
+        ?>
+            <div class="main-video">
+                <div class="video">
+                    <video src="<?php echo $xml->information[0]->url ?>" controls></video>
+                    <h3 class="title">01. <?php echo $xml->information[0]->name ?></h3>
+                    <h4>Description :</h4>
+                    <p class="des"><?php echo $xml[0]->information[0]->description; ?></p>
+                </div>
             </div>
-        </div>
-        <!-- main-video -->
-        <div class="video-list">
-            <div class="vid active">
-                <video src="https://otaghsaziyadegari.ir/video/wordpress%2002.mp4" muted></video>
-                <h3 class="title">01. video title goes here</h3>
-                <p>1Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro nam</p>
+            <!-- main-video -->
+            <div class="video-list">
+                <?php
+                $no = 01;
+                foreach ($xml->information as $key => $value) {
+                    echo ($value->name->attributes()->family) . '<br>';
+                ?>
+                    <div class="vid active">
+                        <video src="<?php echo $value->url; ?>" muted></video>
+                        <h3 class="title"><?php echo $no++ . '.' . $value->name; ?></h3>
+                        <p><?php echo $value->description; ?></p>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
-            <div class="vid">
-                <video src="./video/1.mp4" muted></video>
-                <h3 class="title">02. video title goes here</h3>
-                <p>2Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro nam</p>
+        <?php
+        else :
+        ?>
+            <div class="susses">
+                <h3>Enter xml url in </h3>
             </div>
-            <div class="vid">
-                <video src="./video/2.mp4" muted></video>
-                <h3 class="title">03. video title goes here</h3>
-                <p>3Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro nam</p>
-            </div>
-            <div class="vid">
-                <video src="./video/3.mp4" muted></video>
-                <h3 class="title">04. video title goes here</h3>
-                <p>4Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro nam</p>
-            </div>
-            <div class="vid">
-                <video src="./video/4.mp4" muted></video>
-                <h3 class="title">05. video title goes here</h3>
-                <p>5Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt porro nam</p>
-            </div>
+        <?php
 
-
-        </div>
-
+        endif; ?>
     </div>
     <!-- container -->
 

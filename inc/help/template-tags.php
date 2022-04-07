@@ -98,13 +98,11 @@ function gozal_image_url($num = 1)
     endif;
     return $output;
 }
-function check_page($url)
-{
-    if (is_home() && 'wordpress' === basename($url)) :
-        return 1;
-    else :
-        if (basename(get_permalink()) === basename($url)) :
-            return 1;
-        endif;
-    endif;
+function check_page($url){
+    $actual_link = ( isset( $_SERVER['HTTPS'] ) ? "https" : "http" ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+     if ( $actual_link == $url ) {
+        return 'active';
+    }
+    return '';
 }

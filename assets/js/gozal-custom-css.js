@@ -19,7 +19,7 @@
 //            });    
 //         });
 var editor = ace.edit("customCss");
-editor.setTheme("ace/theme/dracula");
+editor.setTheme("ace/theme/one_dark");
 editor.getSession().setMode("ace/mode/css");
 // $.post('/form.php', serializedData, function(response) {
 //     // Log the response to the console

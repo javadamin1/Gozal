@@ -6,15 +6,10 @@
  * @package gozal
  */
 
- ?>
- <div id="page-height">
-  <div id="footer-height">
-    <div class="container-lg">
-<?php
-
 get_header();
 ?>
 <!-- ------------------------------------------------Include About Page --------------------------->
+ <div class="container-lg">
 <section >
     <?php
 $found_post=null;
@@ -115,7 +110,7 @@ $a++;
 <!-- ------------------------------------------------Include contact-US Page --------------------------->
 <?php
 
-
+$found_post = null;
 if ( $posts = get_posts( array( 
    'name' => 'contact-us', 
    'post_type' => 'page',
@@ -147,9 +142,6 @@ if ( ! is_null( $found_post ) ){
 
     </div>
     <!--container -->
-    </div>
-  <!--footer-height -->
   <?php
   get_footer();
   ?>
-</div>
