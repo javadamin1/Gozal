@@ -25,7 +25,7 @@ get_header();
     <!-- row       -->
  
     <div class="load-more mt-3 ">
-      <button class="btn btn-primary load-more-btn" data-page="1" data-url="<?php echo admin_url('admin-ajax.php');  ?>"> load more </button>
+      <button class="btn btn-primary load-more-btn" data-page="1"> load more </button>
     </div>
 
   <?php

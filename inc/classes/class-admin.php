@@ -62,6 +62,14 @@ class Admin
             'gozal-submenu-slug',
             [$this, 'gozal_theme_settings_page']
         );
+        add_submenu_page(
+            'tools-gozal-theme',
+            'Learn theme',
+            __('Theme training', 'gozal'),
+            'manage_options',
+            'gozal-submenu-learn',
+            [$this, 'gozal_theme_learn_page']
+        );
     }
 
     public function gozal_custom_setting()
@@ -88,6 +96,7 @@ class Admin
         register_setting('gozal-theme-options', 'custom_navbar');
         register_setting('gozal-theme-options', 'active_contact');
         register_setting('gozal-theme-options', 'addres_google_map');
+        register_setting('gozal-theme-options', 'xml_url');
 
         add_settings_section('gozal-theme-section', 'Theme option', [$this, 'gozal_theme_sections_callback'], 'gozal-theme-options');
         add_settings_field('post-formats', 'Post Formats', [$this, 'gozal_theme_option_callback'], 'gozal-theme-options', 'gozal-theme-section');
@@ -96,11 +105,20 @@ class Admin
         add_settings_field('custom-navbar', __('Custom Navbar', 'gozal'), [$this, 'gozal_theme_custom_navbar'], 'gozal-theme-options', 'gozal-theme-section');
         add_settings_field('custom-contact', __('Contact Form', 'gozal'), [$this, 'gozal_theme_custom_contact'], 'gozal-theme-options', 'gozal-theme-section');
         add_settings_field('addres-google', __('google map Url', 'gozal'), [$this, 'gozal_theme_addres_google'], 'gozal-theme-options', 'gozal-theme-section');
+        add_settings_field('xml-url', __('xml url', 'gozal'), [$this, 'gozal_theme_xml'], 'gozal-theme-options', 'gozal-theme-section');
 
         // Custom CSS Options
        // register_setting('gozal-custom-css-options', 'gozal_css', [$this, 'gozal_custom_css']);
         add_settings_section('gozal-custom-css-section', 'Custom CSS', [$this, 'gozal_custom_sections_callback'], 'gozal-submenu-slug');
        add_settings_field('custom-css', 'Insert your custom css', [$this, 'gozal_custom_css_callback'], 'gozal-submenu-slug', 'gozal-custom-css-section');
+
+  // Learn Theme Options
+
+    //    gozal-submenu-learn
+    //    register_setting('gozal-theme-options', 'post_formats');
+    add_settings_section('gozal-learn-section', 'Theme Learn', [$this, 'gozal_learn_sections_callback'], 'gozal-submenu-learn');
+    add_settings_field('video', '', [$this, 'gozal_learn_callback'], 'gozal-submenu-learn', 'gozal-learn-section');
+
     }
 
 
@@ -122,6 +140,12 @@ class Admin
     {
         //add custom css page
         gozal_theme_settings_pages();
+    }
+
+    public function gozal_theme_learn_page()
+    {
+        //add Theme Learn Part
+        gozal_theme_learn_settings();
     }
 
     //Generall part
@@ -219,6 +243,17 @@ class Admin
             ' . _e('Enter the Google Maps URL', 'gozal') . ' <label>';
         echo $output;
     }
+/**
+ *  Xml-url
+ */
+public function gozal_theme_xml()
+{
+    $options = get_option('xml_url');
+    $output = '';
+    $output .= '<label> <input type="url"  name="xml_url" id="xml" value="' .$options . '" placeholder="URL Xml" > 
+        ' . _e('Enter the Xml Video URL', 'gozal') . ' <label>';
+    echo $output;
+}
 
     // Custom css page callback and sanitize
     public function gozal_custom_sections_callback()
@@ -304,8 +339,24 @@ class Admin
         });</script> ';
   
     }
-    public function gozal_custom_css($input)
-    {
-        return esc_textarea($input);
-    }
+
+/**
+ * Theme Learn Part.
+ * 
+ */
+    public function gozal_learn_sections_callback()
+{
+    echo 'You Can Learn Theme All Option Here';
 }
+
+public function gozal_learn_callback ()
+{
+    echo "Enter here";
+}
+
+
+}///admin bracet
+
+
+
+

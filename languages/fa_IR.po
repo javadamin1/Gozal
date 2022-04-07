@@ -41,6 +41,10 @@ msgstr "تنظیمات قالب"
 msgid "custom css"
 msgstr "‫CSSسفارشی"
 
+#: template-parts/inc/class-admin.php:68
+msgid "Theme training"
+msgstr "آموزش تم"
+
 #: template-parts/inc/class-admin.php:70,136
 msgid "instagram ID"
 msgstr "آیدی اینستاگرام"
@@ -138,3 +142,8 @@ msgstr "ادامه مطلب"
 #: template-parts/inc/class-gozal-theme.php:120:122
 msgid "Messages"
 msgstr "پیام ها"
+
+#. ====================    = == = = = = = = = = = = = = = admin pages   = == = = = = = = = = = == = =  ==
+#: template-parts/inc/admin-pages.php:95
+msgid "Gozal Theme Learn Options"
+msgstr "گزینه های یادگیری تم گوزل"

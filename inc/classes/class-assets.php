@@ -100,11 +100,17 @@ class Assets
 
     public function register_admin_style($hook)
     {
+       
         $src = strpos($hook, 'gozal-submenu-slug');
+        $video = strpos($hook, 'gozal-submenu-learn');
         if ($src >= 50) {
             wp_enqueue_style('ace', GOZAL_DIR_URI . '/assets/css/ace.css', array(), '1.0.0', 'all');
             wp_enqueue_script('ace', GOZAL_DIR_URI . '/assets/js/ace/ace.js', array('jquery'), '1.2.1', true);
             wp_enqueue_script('gozal-custom-css-script', GOZAL_DIR_URI . '/assets/js/gozal-custom-css.js', array('jquery'), '1.0.0', true);
+        }
+        if($video){
+            wp_enqueue_style('video', GOZAL_DIR_URI . '/assets/css/video.css', array(), '1.0.0', 'all');
+
         }
     }
 }
