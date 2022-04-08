@@ -77,9 +77,24 @@ function  gozal_theme_learn_settings()
     <?php
     settings_errors();
     ?>
-
+   <div class="preloader" >
+            <div class="loader_34">
+                <div class="ytp-spinner">
+                    <div class="ytp-spinner-container">
+                        <div class="ytp-spinner-rotator">
+                            <div class="ytp-spinner-left">
+                                <div class="ytp-spinner-circle"></div>
+                            </div>
+                            <div class="ytp-spinner-right">
+                                <div class="ytp-spinner-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="container">
-
+     
         <?php
 
         if (get_option('xml_url')  != null) :
@@ -122,6 +137,11 @@ function  gozal_theme_learn_settings()
     <!-- container -->
 
     <script>
+ window.onload = function(){
+        //hide the preloader
+        document.querySelector(".preloader").style.display = "none";
+    }
+
         let listVideo = document.querySelectorAll('.video-list .vid');
         let mainVideo = document.querySelector('.main-video video');
         let title = document.querySelector('.main-video .title');

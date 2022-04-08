@@ -147,3 +147,8 @@ msgstr "پیام ها"
 #: template-parts/inc/admin-pages.php:95
 msgid "Gozal Theme Learn Options"
 msgstr "گزینه های یادگیری تم گوزل"
+
+#. ====================    = == = = = = = = = = = = = = = single pages   = == = = = = = = = = = == = =  ==
+#: template-parts/single.php:
+msgid "Written In"
+msgstr "نوشته شده در"

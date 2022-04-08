@@ -21,6 +21,7 @@ get_header();
             //           '<span class="screen-reader-text">' . __( 'Previous post:', 'gozal' ) . '</span> ' .
             //           '<span class="post-title">%title</span>',
             //   ) );
+           echo comments_template();
                if (comments_open()) :
                   comments_template();
                endif;

@@ -26,16 +26,15 @@
                     <div class="d-flex align-items-center mb-3 ">
                       <p>
                       <i class="fas fa-calendar-alt"></i>
-
-                        12 Jan 2024
+                      <?php 
+                    _e('Written In','gozal');
+                      the_time('Y/m/d'); ?>
                       </p>
                       <p>
                       <i class="fas fa-comment-alt"></i>
-                        50
-                      </p>
-                      <p>
-                      <i class="fas fa-check-double"></i>
-                        35
+                      <?php
+                      comments_number( '0', '1', '%' ); 
+                      ?>
                       </p>
                     </div>
                   </div>
