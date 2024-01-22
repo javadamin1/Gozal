@@ -1,0 +1,25 @@
+{
+
+  "description": "this theme just to learn theme",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "javad fathi",
+      "homepage": "https://www.javadfathi.ir",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "GozalTheme\\Inc\\": "inc/"
+    },
+    "files": [
+      "./inc/help/template-tags.php",
+      "./inc/help/ajax.php",
+      "./inc/pages/admin-pages.php"
+    ]
+  }
+}
