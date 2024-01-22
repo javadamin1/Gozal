@@ -6,9 +6,9 @@
  * @package Gozal
  */
 
-namespace GOZAL_THEME\Inc;
+namespace GozalTheme\Inc\Classes;
 
-use GOZAL_THEME\Inc\Traits\Singleton;
+use GozalTheme\Inc\Traits\Singleton;
 
 class Assets
 {
@@ -100,7 +100,7 @@ class Assets
 
     public function register_admin_style($hook)
     {
-       
+
         $src = strpos($hook, 'gozal-submenu-slug');
         $video = strpos($hook, 'gozal-submenu-learn');
         if ($src >= 50) {

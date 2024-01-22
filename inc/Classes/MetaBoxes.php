@@ -6,11 +6,13 @@
  * @package Gozal
  */
 
-namespace GOZAL_THEME\Inc;
+namespace GozalTheme\Inc\Classes;
 
-use GOZAL_THEME\Inc\Traits\Singleton;
 
-class Meta_boxes{
+
+use GozalTheme\Inc\Traits\Singleton;
+
+class MetaBoxes{
     use Singleton;
     protected function __construct()
     {
@@ -49,7 +51,7 @@ class Meta_boxes{
 
             /**
              * Use nonce for verifiction
-             * استفاده از nonceبرای تایید 
+             * استفاده از nonceبرای تایید
              */
             wp_nonce_field( plugin_basename(__FILE__), 'hide_title_meta_box_nonce' );
 

@@ -26,7 +26,7 @@
  * @package Gozal
  */
 
-namespace GOZAL_THEME\Inc\Traits;
+namespace GozalTheme\Inc\Traits;
 
 trait Singleton
 {
@@ -79,8 +79,6 @@ trait Singleton
         if (!isset($instance[$called_class])) {
 
             $instance[$called_class] = new $called_class();
-
-
             do_action(sprintf('gozal_theme_singleton_init_%s', $called_class)); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
         }

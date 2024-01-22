@@ -1,12 +1,14 @@
 <?php
 /**
- * 
+ *
  * Header Navigation template.
- * 
+ *
  *  @package Gozal
  */
 
-$menu_class = \GOZAL_THEME\Inc\Menus::get_instance();
+
+use GozalTheme\Inc\Classes\Menus;
+$menu_class = Menus::get_instance();
 $header_menu_id = $menu_class->get_menu_id('gozal-header-menu');
 $header_menus = wp_get_nav_menu_items($header_menu_id);
 
@@ -20,12 +22,12 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
   </button>
 
   <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
- 
+
       <?php
       if( ! empty($header_menus) && is_array($header_menus) ){
         ?>
       <ul class="navbar-nav mr-auto">
-        
+
         <?php
         foreach ($header_menus as $menu_item){
             if(! $menu_item -> menu_item_parent ){

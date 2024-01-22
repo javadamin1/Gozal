@@ -6,18 +6,18 @@
  * @package Gozal
  */
 
-namespace GOZAL_THEME\Inc;
+namespace GozalTheme\Inc\Classes;
 
-use GOZAL_THEME\Inc\Traits\Singleton;
+
+
+use GozalTheme\Inc\Traits\Singleton;
 
 class Menus{
     use Singleton;
 
     protected function __construct()
     {
-
         // load class
-
         $this->setup_hooks();
     }
 
@@ -40,11 +40,10 @@ class Menus{
     {
         //Get all the locations.
 
-        $locations=get_nav_menu_locations();
-
+        $locations = get_nav_menu_locations();
         $menu_id = $locations[$location];
 
-        return ! empty($menu_id) ? $menu_id : '';
+        return ! empty($menu_id) ? $menu_id : 0;
     }
     public  function get_child_menu_items( $menu_array , $Parent_id ): array
     {

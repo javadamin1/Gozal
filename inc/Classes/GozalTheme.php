@@ -5,24 +5,25 @@
  * @package Gozal
  */
 
-namespace GOZAL_THEME\Inc;
-
-use GOZAL_THEME\Inc\Traits\Singleton;
+namespace GozalTheme\Inc\Classes;
 
 
-class GOZAL_THEME
+use GozalTheme\Inc\Traits\Singleton;
+
+class GozalTheme
 {
     use Singleton;
-
+    public static int $counter = 0;
     protected function __construct()
     {
         // Load class
         Assets::get_instance();
-        Meta_boxes::get_instance();
+        MetaBoxes::get_instance();
         Menus::get_instance();
         Admin::get_instance();
         Cleanup::get_instance();
         $this->setup_hooks();
+        self::$counter++;
     }
     protected function setup_hooks()
     {
@@ -31,8 +32,6 @@ class GOZAL_THEME
          */
         add_action('after_setup_theme', [$this, 'setup_theme']);
     }
-
-
 
     public function setup_theme()
     {
@@ -45,7 +44,7 @@ class GOZAL_THEME
         /**
          *  active title-tag for gozal_theme
          */
-  
+
         add_theme_support( "title-tag" );
         add_theme_support('custom-logo', [
             'height' => 50,

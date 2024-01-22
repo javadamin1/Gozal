@@ -2,4 +2,6 @@ assets/js/ace/
 assets/webfonts
 assets/css/all.css
 template-parts/header/nav1.php
+vendor
+.idea
 

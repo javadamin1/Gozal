@@ -6,9 +6,9 @@
  * @package Gozal
  */
 
-namespace GOZAL_THEME\Inc;
+namespace GozalTheme\Inc\Classes;
 
-use GOZAL_THEME\Inc\Traits\Singleton;
+use GozalTheme\Inc\Traits\Singleton;
 
 class Cleanup{
     use Singleton;
@@ -44,8 +44,8 @@ class Cleanup{
     public function gozal_remove_meta_version(){
         return '';
     }
-   
-    
+
+
 
 
 }

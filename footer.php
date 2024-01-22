@@ -2,7 +2,7 @@
 
 /**
  * Footer template.
- * 
+ *
  * @package Gozal
  */
 
@@ -23,6 +23,7 @@
 <!-- page-height -->
 <?php
 wp_footer();
+
 ?>
 </body>
 

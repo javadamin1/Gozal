@@ -6,9 +6,10 @@
  * @package Gozal
  */
 
-namespace GOZAL_THEME\Inc;
+namespace GozalTheme\Inc\Classes;
 
-use GOZAL_THEME\Inc\Traits\Singleton;
+
+use GozalTheme\Inc\Traits\Singleton;
 
 class Admin
 {
@@ -34,7 +35,7 @@ class Admin
 
     public function gozal_add_admin_page()
     {
-        // Gozal Admin Page menu  
+        // Gozal Admin Page menu
         add_menu_page(__('Gozal Settings Page', 'gozal'), __('Gozal Settings', 'gozal'), 'manage_options', 'tools-gozal-theme', [$this, 'gozal_theme_create_page'], GOZAL_DIR_URI . '/assets/img/Gozal.png', 110);
 
         // sub menu
@@ -267,7 +268,7 @@ public function gozal_theme_xml()
         $css= fread($myfile,filesize(GOZAL_DIR_PATH."/assets/css/user.css"));
         fclose($myfile);
          echo '<div id="customCss" >'.$css.' </div><textarea name="gozal_css" id="gozal-text-css" style="display: none;visibility: hidden" >' .$css. '</textarea>';
-       
+
  echo '<script> 
 
  jQuery(document).ready(function ($) {
@@ -337,12 +338,12 @@ public function gozal_theme_xml()
     
     });
         });</script> ';
-  
+
     }
 
 /**
  * Theme Learn Part.
- * 
+ *
  */
     public function gozal_learn_sections_callback()
 {

@@ -1,5 +1,6 @@
 <?php
 
+
 function g_t_p_custom_thumbnail($post_id, $size = 'featured-thumbnail', $add_attrib = [])
 {
 
